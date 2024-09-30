@@ -1,0 +1,40 @@
+body{
+    background: linear-gradient(#000, #1a1a5f);
+    background-attachment: fixed;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: #c9c9fc;
+}
+
+ul li{
+    list-style: none;
+}
+
+nav{
+    
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    flex: 1;
+}
+
+main{
+    margin-top: 100px;
+    text-align: center;
+}
+
+#websites ul li{
+    margin: 10px;
+    margin-left: 0;
+}
+
+.construction{
+    
+}
