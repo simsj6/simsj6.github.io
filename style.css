@@ -43,10 +43,6 @@ nav ul li a{
     color: #3d1c2a;
 }
 
-nav ul li a:hover{
-    color: #f2d3e5;
-}
-
 li{
     list-style: none;
 }
@@ -54,6 +50,10 @@ li{
 a{
     text-decoration: none;
     color: #3d1c2a;
+}
+
+a:hover{
+    color: #fff;
 }
 
 .hamburger{
