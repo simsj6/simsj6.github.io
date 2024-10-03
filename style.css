@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
 
 body{
-    background-image: linear-gradient(#f59bd166, #f59bd166), url('images/plants.jpg');
+    background-image: linear-gradient(#f59bd166, #f59bd166), url(/images/plants.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -12,6 +12,20 @@ body{
     padding: 0;
     display: flex;
     flex-direction: column;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
 }
 
 nav{
@@ -110,4 +124,12 @@ footer{
 footer p{
     margin: 0;
     text-align: center;
+}
+
+@media (max-width: 1024px){
+
+}
+
+@media (max-width: 600px){
+
 }
