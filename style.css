@@ -11,7 +11,7 @@ body{
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #3d1c2a;
+    color: #fff;
     font-family: "Afacad Flux", sans-serif;
     min-height: 100vh;
     margin: 0;
@@ -43,7 +43,10 @@ nav ul li{
 nav ul li a{
     font-size: 1.6rem;
     font-weight: 400;
-    color: #3d1c2a;
+}
+
+.websites li a{
+    text-decoration: underline;
 }
 
 li{
@@ -52,11 +55,17 @@ li{
 
 a{
     text-decoration: none;
-    color: #3d1c2a;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 5px;
 }
 
 a:hover{
-    color: #fff;
+    background-color: #3d1c2a;
+}
+
+.img:hover{
+    background-color: #3d1c2a00;
 }
 
 .hamburger{
@@ -70,7 +79,7 @@ a:hover{
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #3d1c2a;
+    background-color: #fff;
 }
 
 main{
@@ -113,7 +122,7 @@ main img{
 
 hr{
     width: 50%;
-    border: 1px solid #3d1c2a;
+    border: 1px solid #fff;
     margin: auto;
 }
 
@@ -143,7 +152,7 @@ footer p{
         top: -100%;
         left: 0;
         flex-direction: column;
-        background-color: #58374bd9;
+        background-color: #58374b;
         width: 100%;
         border-radius: 5px;
         text-align: center;
@@ -157,7 +166,6 @@ footer p{
 
     nav ul li a{
         padding: 15px 0;
-        color: #fff;
     }
 
     .nav-item{
@@ -175,7 +183,6 @@ footer p{
     .nav-link:hover{
         background-color: #3d1c2aa2;
         width: 100%;
-        color: #fff;
         border-radius: 5px;
     }
 
@@ -190,11 +197,9 @@ footer p{
 
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
-        background-color: #fff;
     }
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-        background-color: #fff;
     }
 }
