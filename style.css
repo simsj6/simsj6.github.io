@@ -142,7 +142,7 @@ footer p{
     text-align: center;
 }
 
-@media only screen and (max-width: 768px){
+@media (max-width: 1024px){
     nav{
         justify-content: right;
     }
@@ -201,5 +201,17 @@ footer p{
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 600px){
+    body{
+        background-image: linear-gradient(#f59bd166, #f59bd166), url(/images/plants2.jpg);
+        background-size: cover;
+    }
+
+    .websites{
+        padding-left: 25px;
+        padding-right: 25px;
     }
 }
