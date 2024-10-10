@@ -126,6 +126,10 @@ hr{
     margin: auto;
 }
 
+.assignments{
+    padding-top: 30px;
+}
+
 footer{
     position: relative;
     left: 0;
