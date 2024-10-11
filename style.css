@@ -65,7 +65,7 @@ a:hover{
 }
 
 .img:hover{
-    background-color: #3d1c2a00;
+    background-color: transparent;
 }
 
 .hamburger{
@@ -138,12 +138,106 @@ footer{
     margin-inline: auto;
     width: fit-content;
     min-height: 50px;
-    margin-bottom: 20px;
+    margin: 0;
+    width: 100%;
 }
 
 footer p{
     margin: 0;
     text-align: center;
+}
+
+/* broadsheet styling */
+#broadsheet{
+    background-image: none;
+    color: #3d1c2a;
+}
+
+#broadsheet nav{
+    background-image: linear-gradient(#f59bd166, #f59bd166), url(/images/plants.jpg);
+    background-size: cover;
+}
+
+#broadsheet header h1{
+    text-align: center;
+    margin-top: 50px;
+}
+
+#broadsheet hr{
+    border: 1px solid #3d1c2a;
+    margin-bottom: 30px;
+}
+
+#broadsheet main{
+    margin-top: 0;
+}
+
+#broadsheet main a{
+    color: #3d1c2a;
+    padding: 0;
+}
+
+#broadsheet main a:hover{
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+#broadsheet footer{
+    background-image: linear-gradient(#f59bd166, #f59bd166), url(/images/plants.jpg);
+    background-size: cover;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"
+        "column column column column";
+    text-align: justify;
+    margin: 30px;
+    margin-top: 0;
+    justify-items: center;
+}
+
+.grid-container h2, .grid-container h3, .grid-container p{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.grid-container h3{
+    padding: 5px 0px;
+}
+
+.grid-container p{
+    font-size: large;
+}
+
+.grid-container img{
+    width: 90%;
+    height: auto;
+}
+
+.read-more{
+    text-decoration: underline;
+}
+
+.header{
+    grid-area: header;
+    text-align: center;
+}
+
+.columns{
+    grid-area: column;
+    /* justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.columns div{
+    width: 100%;
 }
 
 @media (max-width: 1024px){
@@ -205,6 +299,26 @@ footer p{
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* broadsheet styling */
+    .grid-container{
+        display: block;
+        justify-items: center;
+    }
+    
+    .columns{
+        display: block;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .grid-container img{
+        display: none;
+    }
+
+    .image-credit{
+        display: none;
     }
 }
 
