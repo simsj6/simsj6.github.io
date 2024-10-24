@@ -1,5 +1,9 @@
+let x = circle(((width / 2) - 50), 225, 253);
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
+
+    loop();
 }
 
 function windowResized() {
@@ -225,6 +229,10 @@ function draw() {
     // 43
     fill(60,139,182);
     circle(((width / 2) + 210), 530, 15);
+}
+
+function popping(){
+    
 }
 
 // pop circles animation
