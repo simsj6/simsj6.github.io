@@ -34,7 +34,7 @@ function setup() {
         color(240,222,18), 
         color(203,46,75), 
         color(60,139,182)]
-    circleSize = Math.floor(Math.random() * 110) + 15;
+    circleSize = Math.floor(Math.random() * 250) + 15;
     circleColor = colors[(Math.floor(Math.random() * colors.length))];
 }
 
@@ -59,7 +59,7 @@ function mousePressed() {
 }
 
 function mouseReleased() {
-    circleSize = Math.floor(Math.random() * 110) + 15;
+    circleSize = Math.floor(Math.random() * 250) + 15;
     circleColor = colors[(Math.floor(Math.random() * colors.length))];
 }
 
