@@ -11,12 +11,10 @@ canvas {
 }
 
 nav{
-  background-image: linear-gradient(#f59bd166, #f59bd166), url(../images/plants.jpg);
-  background-size: cover;
+  background-color: rgb(46, 48, 64);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 1rem 1.5rem; */
 }
 
 nav ul{
@@ -49,5 +47,5 @@ a{
 }
 
 a:hover{
-  background-color: #3d1c2a;
+  background-color: rgb(26, 27, 36);
 }

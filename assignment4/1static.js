@@ -70,7 +70,7 @@ function draw() {
     circle((width / 3), (height / 3.55), height / 5);
 
     // 17
-    fill(0,0,0);
+    fill(244,115,171);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 18
@@ -78,11 +78,11 @@ function draw() {
     circle((width / 3), (height / 3.55), height / 5);
 
     // 19
-    fill(0,0,0);
+    fill(81,187,226);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 20
-    fill(0,0,0);
+    fill(169,177,214);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 21
@@ -90,11 +90,11 @@ function draw() {
     circle((width / 3), (height / 3.55), height / 5);
 
     // 22
-    fill(0,0,0);
+    fill(191,161,211);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 23
-    fill(0,0,0);
+    fill(213,101,137);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 24
@@ -102,31 +102,31 @@ function draw() {
     circle((width / 3), (height / 3.55), height / 5);
 
     // 25
-    fill(0,0,0);
+    fill(213,101,137);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 26
-    fill(0,0,0);
+    fill(201,101,75);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 27
-    fill(0,0,0);
+    fill(155,95,71);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 28
-    fill(0,0,0);
+    fill(232,47,88);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 29
-    fill(0,0,0);
+    fill(247,229,101);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 30
-    fill(0,0,0);
+    fill(246,149,203);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 31
-    fill(0,0,0);
+    fill(51,164,222);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 32
@@ -134,23 +134,23 @@ function draw() {
     circle((width / 3), (height / 3.55), height / 5);
 
     // 33
-    fill(0,0,0);
+    fill(247,182,52);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 34
-    fill(0,0,0);
+    fill(206,173,128);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 35
-    fill(0,0,0);
+    fill(133,212,217);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 36
-    fill(0,0,0);
+    fill(18,76,222);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 37
-    fill(0,0,0);
+    fill(200,35,51);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 38
@@ -158,22 +158,22 @@ function draw() {
     circle((width / 3), (height / 3.55), height / 5);
 
     // 39
-    fill(0,0,0);
+    fill(209,184,83);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 40
-    fill(0,0,0);
+    fill(198,203,222);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 41
-    fill(0,0,0);
+    fill(240,222,18);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 42
-    fill(0,0,0);
+    fill(203,46,75);
     circle((width / 3), (height / 3.55), height / 5);
 
     // 43
-    fill(0,0,0);
+    fill(60,139,182);
     circle((width / 3), (height / 3.55), height / 5);
 }
