@@ -1,4 +1,6 @@
-let x = circle(((width / 2) - 50), 225, 253);
+// pop circles animation
+
+const FRAME_RATE = 30;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -8,19 +10,26 @@ function setup() {
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
+    frameRate(FRAME_RATE);
 }
 
 function draw() {
     background(46, 48, 64);
+
     noStroke();
 
     // 1 border
+    
     fill(255,255,255);
-    circle(((width / 2) - 50), 225, 253);
+    animS.circle('c1', FRAME_RATE * 10, ((width / 2) - 50), 225, 253);
+    animS.reset();
+
+    // circle(((width / 2) - 50), 225, 253);
     
     // 1
     fill(13, 33, 191);
-    circle(((width / 2) - 50), 225, 250);
+    animS.circle('c2', FRAME_RATE * 10, ((width / 2) - 50), 225, 250);
+    // circle(((width / 2) - 50), 225, 250);
 
     // 2
     fill(0,0,0);
@@ -230,9 +239,3 @@ function draw() {
     fill(60,139,182);
     circle(((width / 2) + 210), 530, 15);
 }
-
-function popping(){
-    
-}
-
-// pop circles animation
