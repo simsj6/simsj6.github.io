@@ -318,7 +318,7 @@ function draw() {
     circle((qq + ((width / 2) + 210)), 530, 15);
 
     a = a + 1.6904;
-    b = b + 2.8774;
+    b = b + 2.5774;
     c = c + 0.9066;
     d = d + 1.7336;
     e = e + 1.9531;
@@ -331,15 +331,15 @@ function draw() {
     l = l + 2.3822;
     m = m + 0.5693;
     n = n + 1.5324;
-    o = o + 1.8813;
+    o = o + 2.6533;
     p = p + 2.9103;
     q = q + 2.646;
-    r = r + 2.8952;
+    r = r + 1.8813;
     s = s + 1.605;
     t = t + 1.7183;
     u = u + 2.8571;
     v = v + 2.5612;
-    w = w + 2.6533;
+    w = w + 2.8952;
     x = x + 1.6116;
     y = y + 0.9867;
     z = z + 2.1353;
@@ -364,131 +364,131 @@ function draw() {
     if(a > windowWidth - 500){
         a = -windowWidth + 500;
     }
-    if(b < -windowWidth / 2){
-        b = windowWidth;
+    if(b > windowWidth - 500){
+        b = -windowWidth;
     }
-    if(c < -windowWidth / 2){
-        c = windowWidth;
+    if(c > windowWidth - 500){
+        c = -windowWidth;
     }
-    if(d < -windowWidth / 2){
-        d = windowWidth;
+    if(d > windowWidth - 500){
+        d = -windowWidth;
     }
-    if(e < -windowWidth / 2){
-        e = windowWidth;
+    if(e > windowWidth - 500){
+        e = -windowWidth;
     }
-    if(f < -windowWidth / 2){
-        f = windowWidth;
+    if(f > windowWidth - 500){
+        f = -windowWidth;
     }
-    if(g < -windowWidth / 2){
-        g = windowWidth;
+    if(g > windowWidth - 500){
+        g = -windowWidth;
     }
-    if(h < -windowWidth / 2){
-        h = windowWidth;
+    if(h > windowWidth - 500){
+        h = -windowWidth;
     }
-    if(i < -windowWidth / 2){
-        i = windowWidth;
+    if(i > windowWidth - 500){
+        i = -windowWidth;
     }
-    if(j < -windowWidth / 2){
-        j = windowWidth;
+    if(j > windowWidth - 500){
+        j = -windowWidth;
     }
-    if(k < -windowWidth / 2){
-        k = windowWidth;
+    if(k > windowWidth - 500){
+        k = -windowWidth;
     }
-    if(l < -windowWidth / 2){
-        l = windowWidth;
+    if(l > windowWidth - 500){
+        l = -windowWidth;
     }
-    if(m < -windowWidth / 2){
-        m = windowWidth;
+    if(m > windowWidth - 500){
+        m = -windowWidth;
     }
-    if(n < -windowWidth / 2){
-        n = windowWidth;
+    if(n > windowWidth - 500){
+        n = -windowWidth;
     }
-    if(o < -windowWidth / 2){
-        o = windowWidth;
+    if(o > windowWidth - 500){
+        o = -windowWidth;
     }
-    if(p < -windowWidth / 2){
-        p = windowWidth;
+    if(p > windowWidth - 500){
+        p = -windowWidth;
     }
-    if(q < -windowWidth / 2){
-        q = windowWidth;
+    if(q > windowWidth - 500){
+        q = -windowWidth;
     }
-    if(r < -windowWidth / 2){
-        r = windowWidth;
+    if(r > windowWidth - 500){
+        r = -windowWidth;
     }
-    if(s < -windowWidth / 2){
-        s = windowWidth;
+    if(s > windowWidth - 500){
+        s = -windowWidth;
     }
-    if(t < -windowWidth / 2){
-        t = windowWidth;
+    if(t > windowWidth - 500){
+        t = -windowWidth;
     }
-    if(u < -windowWidth / 2){
-        u = windowWidth;
+    if(u > windowWidth - 500){
+        u = -windowWidth;
     }
-    if(v < -windowWidth / 2){
-        v = windowWidth;
+    if(v > windowWidth - 500){
+        v = -windowWidth;
     }
-    if(w < -windowWidth / 2){
-        w = windowWidth;
+    if(w > windowWidth - 500){
+        w = -windowWidth;
     }
-    if(x < -windowWidth / 2){
-        x = windowWidth;
+    if(x > windowWidth - 500){
+        x = -windowWidth;
     }
-    if(y < -windowWidth / 2){
-        y = windowWidth;
+    if(y > windowWidth - 500){
+        y = -windowWidth;
     }
-    if(z < -windowWidth / 2){
-        z = windowWidth;
+    if(z > windowWidth - 500){
+        z = -windowWidth;
     }
-    if(aa < -windowWidth / 2){
-        aa = windowWidth;
+    if(aa > windowWidth - 500){
+        aa = -windowWidth;
     }
-    if(bb < -windowWidth / 2){
-        bb = windowWidth;
+    if(bb > windowWidth - 500){
+        bb = -windowWidth;
     }
-    if(cc < -windowWidth / 2){
-        cc = windowWidth;
+    if(cc > windowWidth - 500){
+        cc = -windowWidth;
     }
-    if(dd < -windowWidth / 2){
-        dd = windowWidth;
+    if(dd > windowWidth - 500){
+        dd = -windowWidth;
     }
-    if(ee < -windowWidth / 2){
-        ee = windowWidth;
+    if(ee > windowWidth - 500){
+        ee = -windowWidth;
     }
-    if(ff < -windowWidth / 2){
-        ff = windowWidth;
+    if(ff > windowWidth - 500){
+        ff = -windowWidth;
     }
-    if(gg < -windowWidth / 2){
-        gg = windowWidth;
+    if(gg > windowWidth - 500){
+        gg = -windowWidth;
     }
-    if(hh < -windowWidth / 2){
-        hh = windowWidth;
+    if(hh > windowWidth - 500){
+        hh = -windowWidth;
     }
-    if(ii < -windowWidth / 2){
-        ii = windowWidth;
+    if(ii > windowWidth - 500){
+        ii = -windowWidth;
     }
-    if(jj < -windowWidth / 2){
-        jj = windowWidth;
+    if(jj > windowWidth - 500){
+        jj = -windowWidth;
     }
-    if(kk < -windowWidth / 2){
-        kk = windowWidth;
+    if(kk > windowWidth - 500){
+        kk = -windowWidth;
     }
-    if(ll < -windowWidth / 2){
-        ll = windowWidth;
+    if(ll > windowWidth - 500){
+        ll = -windowWidth;
     }
-    if(mm < -windowWidth / 2){
-        mm = windowWidth;
+    if(mm > windowWidth - 500){
+        mm = -windowWidth;
     }
-    if(nn < -windowWidth / 2){
-        nn = windowWidth;
+    if(nn > windowWidth - 500){
+        nn = -windowWidth;
     }
-    if(oo < -windowWidth / 2){
-        oo = windowWidth;
+    if(oo > windowWidth - 500){
+        oo = -windowWidth;
     }
-    if(pp < -windowWidth / 2){
-        pp = windowWidth;
+    if(pp > windowWidth - 500){
+        pp = -windowWidth;
     }
-    if(qq < -windowWidth / 2){
-        qq = windowWidth;
+    if(qq > windowWidth - 500){
+        qq = -windowWidth;
     }
 
     // for(i = 0; i < positions.length; i++){
