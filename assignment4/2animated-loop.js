@@ -1,48 +1,6 @@
-// pop circles animation
+// move right in a loop
 
-let a;
-let b;
-let c;
-let d;
-let e;
-let f;
-let g;
-let h;
-let i;
-let j;
-let k;
-let l;
-let m;
-let n;
-let p;
-let q;
-let r;
-let s;
-let t;
-let u;
-let v;
-let w;
-let x;
-let y;
-let z;
-let aa;
-let bb;
-let cc;
-let dd;
-let ee;
-let ff;
-let gg;
-let hh;
-let ii;
-let jj;
-let kk;
-let ll;
-let mm;
-let nn;
-let oo;
-let pp;
-let qq;
-let positions;
+let a, b, c, d, e, f, g, h, i, j, k, l, m, n, p, q, r, s, t, u, v, w, x, y, z, aa, bb, cc, dd, ee, ff, gg, hh, ii, jj, kk, ll, mm, nn, oo, pp, qq;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -89,7 +47,6 @@ function setup() {
     oo = 0;
     pp = 0;
     qq = 0;
-    positions = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm,nn,oo,pp,qq];
 }
 
 function windowResized() {
@@ -317,12 +274,13 @@ function draw() {
     fill(60,139,182);
     circle((qq + ((width / 2) + 210)), 530, 15);
 
+    // horizontal offset to move right
     a = a + 1.6904;
     b = b + 2.5774;
     c = c + 0.9066;
     d = d + 1.7336;
     e = e + 1.9531;
-    f = f + 2.5891;
+    f = f + 2.6891;
     g = g + 0.683;
     h = h + 2.5401;
     i = i + 2.9692;
@@ -361,6 +319,7 @@ function draw() {
     pp = pp + 1.2718;
     qq = qq + 0.9325;
 
+    // circles going offscreen, move them back to the left
     if(a > windowWidth - 500){
         a = -windowWidth + 500;
     }
@@ -490,15 +449,4 @@ function draw() {
     if(qq > windowWidth - 500){
         qq = -windowWidth;
     }
-
-    // for(i = 0; i < positions.length; i++){
-    //     if (i < -windowWidth / 2){
-    //         x = windowWidth;
-    //     }
-    // }
-    // if(x < -windowWidth / 2){
-    //     x = windowWidth;
-    // }
-
-    text(a,20,20);
 }
