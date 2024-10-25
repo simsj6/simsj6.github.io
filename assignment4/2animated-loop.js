@@ -320,133 +320,133 @@ function draw() {
     qq = qq + 0.9325;
 
     // circles going offscreen, move them back to the left
-    if(a > windowWidth - 500){
-        a = -windowWidth + 500;
+    if(a > windowWidth - (((width / 2) - 50)) + (253/2)){
+        a = -windowWidth + (((width / 2) + 50)) - (253/2);
     }
-    if(b > windowWidth - 500){
-        b = -windowWidth;
+    if(b > windowWidth - (((width / 2) - 72)) + (185/2)){
+        b = -windowWidth + (((width / 2) + 72)) - (185/2);
     }
-    if(c > windowWidth - 500){
-        c = -windowWidth;
+    if(c > windowWidth - (((width / 2) - 275)) + (25/2)){
+        c = -windowWidth + (((width / 2) + 275)) - (25/2);
     }
-    if(d > windowWidth - 500){
-        d = -windowWidth;
+    if(d > windowWidth - (((width / 2) - 260)) + (50/2)){
+        d = -windowWidth + (((width / 2) + 260)) - (50/2);
     }
-    if(e > windowWidth - 500){
-        e = -windowWidth;
+    if(e > windowWidth - (((width / 2) - 210)) + (71/2)){
+        e = -windowWidth + (((width / 2) + 210)) - (71/2);
     }
-    if(f > windowWidth - 500){
-        f = -windowWidth;
+    if(f > windowWidth - (((width / 2) - 200)) + (20/2)){
+        f = -windowWidth + (((width / 2) + 200)) - (20/2);
     }
-    if(g > windowWidth - 500){
-        g = -windowWidth;
+    if(g > windowWidth - (((width / 2) + 5)) + (70/2)){
+        g = -windowWidth + (((width / 2) - 5)) - (70/2);
     }
-    if(h > windowWidth - 500){
-        h = -windowWidth;
+    if(h > windowWidth - (((width / 2) + 120)) + (40/2)){
+        h = -windowWidth + (((width / 2) - 120)) - (40/2);
     }
-    if(i > windowWidth - 500){
-        i = -windowWidth;
+    if(i > windowWidth - (((width / 2) + 180)) + (20/2)){
+        i = -windowWidth + (((width / 2) - 180)) - (20/2);
     }
-    if(j > windowWidth - 500){
-        j = -windowWidth;
+    if(j > windowWidth - (((width / 2) + 215)) + (15/2)){
+        j = -windowWidth + (((width / 2) - 215)) - (15/2);
     }
-    if(k > windowWidth - 500){
-        k = -windowWidth;
+    if(k > windowWidth - (((width / 2) + 110)) + (90/2)){
+        k = -windowWidth + (((width / 2) - 110)) - (90/2);
     }
-    if(l > windowWidth - 500){
-        l = -windowWidth;
+    if(l > windowWidth - (((width / 2) + 110)) + (21/2)){
+        l = -windowWidth + (((width / 2) - 110)) - (21/2);
     }
-    if(m > windowWidth - 500){
-        m = -windowWidth;
+    if(m > windowWidth - (((width / 2) - 20)) + (20/2)){
+        m = -windowWidth + (((width / 2) + 20)) - (20/2);
     }
-    if(n > windowWidth - 500){
-        n = -windowWidth;
+    if(n > windowWidth - (((width / 2) + 12)) + (40/2)){
+        n = -windowWidth + (((width / 2) - 12)) - (40/2);
     }
-    if(o > windowWidth - 500){
-        o = -windowWidth;
+    if(o > windowWidth - (((width / 2) + 38)) + (65/2)){
+        o = -windowWidth + (((width / 2) - 38)) - (65/2);
     }
-    if(p > windowWidth - 500){
-        p = -windowWidth;
+    if(p > windowWidth - (((width / 2) + 35)) + (70/2)){
+        p = -windowWidth + (((width / 2) - 35)) - (70/2);
     }
-    if(q > windowWidth - 500){
-        q = -windowWidth;
+    if(q > windowWidth - (((width / 2) - 5)) + (40/2)){
+        q = -windowWidth + (((width / 2) + 5)) - (40/2);
     }
-    if(r > windowWidth - 500){
-        r = -windowWidth;
+    if(r > windowWidth - (((width / 2) + 60)) + (30/2)){
+        r = -windowWidth + (((width / 2) - 60)) - (30/2);
     }
-    if(s > windowWidth - 500){
-        s = -windowWidth;
+    if(s > windowWidth - (((width / 2) + 48)) + (8/2)){
+        s = -windowWidth + (((width / 2) - 48)) - (8/2);
     }
-    if(t > windowWidth - 500){
-        t = -windowWidth;
+    if(t > windowWidth - (((width / 2) - 50)) + (50/2)){
+        t = -windowWidth + (((width / 2) + 50)) - (50/2);
     }
-    if(u > windowWidth - 500){
-        u = -windowWidth;
+    if(u > windowWidth - (((width / 2) - 65)) + (9/2)){
+        u = -windowWidth + (((width / 2) + 65)) - (9/2);
     }
-    if(v > windowWidth - 500){
-        v = -windowWidth;
+    if(v > windowWidth - (((width / 2) - 95)) + (7/2)){
+        v = -windowWidth + (((width / 2) + 95)) - (7/2);
     }
-    if(w > windowWidth - 500){
-        w = -windowWidth;
+    if(w > windowWidth - (((width / 2) - 115)) + (10/2)){
+        w = -windowWidth + (((width / 2) + 115)) - (10/2);
     }
-    if(x > windowWidth - 500){
-        x = -windowWidth;
+    if(x > windowWidth - (((width / 2) - 168)) + (10/2)){
+        x = -windowWidth + (((width / 2) + 168)) - (10/2);
     }
-    if(y > windowWidth - 500){
-        y = -windowWidth;
+    if(y > windowWidth - (((width / 2) - 145)) + (40/2)){
+        y = -windowWidth + (((width / 2) + 145)) - (40/2);
     }
-    if(z > windowWidth - 500){
-        z = -windowWidth;
+    if(z > windowWidth - (((width / 2) - 125)) + (40/2)){
+        z = -windowWidth + (((width / 2) + 125)) - (40/2);
     }
-    if(aa > windowWidth - 500){
-        aa = -windowWidth;
+    if(aa > windowWidth - (((width / 2) - 155)) + (40/2)){
+        aa = -windowWidth + (((width / 2) + 155)) - (40/2);
     }
-    if(bb > windowWidth - 500){
-        bb = -windowWidth;
+    if(bb > windowWidth - (((width / 2) - 135)) + (40/2)){
+        bb = -windowWidth + (((width / 2) + 135)) - (40/2);
     }
-    if(cc > windowWidth - 500){
-        cc = -windowWidth;
+    if(cc > windowWidth - (((width / 2) - 175)) + (40/2)){
+        cc = -windowWidth + (((width / 2) + 175)) - (40/2);
     }
-    if(dd > windowWidth - 500){
-        dd = -windowWidth;
+    if(dd > windowWidth - (((width / 2) - 210)) + (12/2)){
+        dd = -windowWidth + (((width / 2) + 210)) - (12/2);
     }
-    if(ee > windowWidth - 500){
-        ee = -windowWidth;
+    if(ee > windowWidth - (((width / 2) - 185)) + (22/2)){
+        ee = -windowWidth + (((width / 2) + 185)) - (22/2);
     }
-    if(ff > windowWidth - 500){
-        ff = -windowWidth;
+    if(ff > windowWidth - (((width / 2) - 218)) + (11/2)){
+        ff = -windowWidth + (((width / 2) + 218)) - (11/2);
     }
-    if(gg > windowWidth - 500){
-        gg = -windowWidth;
+    if(gg > windowWidth - (((width / 2) - 10)) + (20/2)){
+        gg = -windowWidth + (((width / 2) + 10)) - (20/2);
     }
-    if(hh > windowWidth - 500){
-        hh = -windowWidth;
+    if(hh > windowWidth - (((width / 2) + 180)) + (110/2)){
+        hh = -windowWidth + (((width / 2) - 180)) - (110/2);
     }
-    if(ii > windowWidth - 500){
-        ii = -windowWidth;
+    if(ii > windowWidth - (((width / 2) + 120)) + (25/2)){
+        ii = -windowWidth + (((width / 2) - 120)) - (25/2);
     }
-    if(jj > windowWidth - 500){
-        jj = -windowWidth;
+    if(jj > windowWidth - (((width / 2) + 145)) + (30/2)){
+        jj = -windowWidth + (((width / 2) - 145)) - (30/2);
     }
-    if(kk > windowWidth - 500){
-        kk = -windowWidth;
+    if(kk > windowWidth - (((width / 2) + 220)) + (15/2)){
+        kk = -windowWidth + (((width / 2) - 220)) - (15/2);
     }
-    if(ll > windowWidth - 500){
-        ll = -windowWidth;
+    if(ll > windowWidth - (((width / 2) + 185)) + (10/2)){
+        ll = -windowWidth + (((width / 2) - 185)) - (10/2);
     }
-    if(mm > windowWidth - 500){
-        mm = -windowWidth;
+    if(mm > windowWidth - (((width / 2) + 198)) + (10/2)){
+        mm = -windowWidth + (((width / 2) - 198)) - (10/2);
     }
-    if(nn > windowWidth - 500){
-        nn = -windowWidth;
+    if(nn > windowWidth - (((width / 2) + 238)) + (12/2)){
+        nn = -windowWidth + (((width / 2) - 238)) - (12/2);
     }
-    if(oo > windowWidth - 500){
-        oo = -windowWidth;
+    if(oo > windowWidth - (((width / 2) + 165)) + (10/2)){
+        oo = -windowWidth + (((width / 2) - 165)) - (10/2);
     }
-    if(pp > windowWidth - 500){
-        pp = -windowWidth;
+    if(pp > windowWidth - (((width / 2) + 150)) + (18/2)){
+        pp = -windowWidth + (((width / 2) - 150)) - (18/2);
     }
-    if(qq > windowWidth - 500){
-        qq = -windowWidth;
+    if(qq > windowWidth - (((width / 2) + 210)) + (15/2)){
+        qq = -windowWidth + (((width / 2) - 210)) - (15/2);
     }
 }
