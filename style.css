@@ -240,6 +240,27 @@ footer p{
     width: 100%;
 }
 
+#reflection main{
+    background-image: linear-gradient(#fff, #fff);
+    color: #3d1c2a;
+    margin-top: 0;
+    padding-top: 30px;
+}
+
+#reflection main p{
+    text-align: justify;
+}
+
+#reflection main hr{
+    border: 1px solid #3d1c2a;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#reflection footer{
+    margin-top: 10px;
+}
+
 @media (max-width: 1024px){
     nav{
         justify-content: right;
