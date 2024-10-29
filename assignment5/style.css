@@ -11,6 +11,10 @@ nav ul li a:hover{
     background-color: #3d1c2a;
 }
 
+h1, h2, h3{
+    margin: 20px;
+}
+
 ul{
     padding: 0;
     margin: 0;
