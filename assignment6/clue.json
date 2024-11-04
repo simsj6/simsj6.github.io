@@ -1,90 +1,34 @@
 [
     {
-      "title": "Cirrus Clouds",
-      "wikiLink": "https://en.wikipedia.org/wiki/Cirrus_cloud",
+      "title": "Classic Clue",
+      "buyLink": "https://en.wikipedia.org/wiki/Cirrus_cloud",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/CirrusField-color.jpg",
       "altText": "Sky containing different types of cirrus clouds",
       "text": "Cirrus (cloud classification symbol: Ci) is a genus of high cloud made of ice crystals. Cirrus clouds typically appear delicate and wispy with white strands. Cirrus are usually formed when warm, dry air rises, causing water vapor deposition onto rocky or metallic dust particles at high altitudes.",
-      "altitude": "High"
+      "year": "Low"
     },
     {
       "title": "Cirrostratus Clouds",
-      "wikiLink": "https://en.wikipedia.org/wiki/Cirrostratus_cloud",
+      "buyLink": "https://en.wikipedia.org/wiki/Cirrostratus_cloud",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/MoonHaloDonnellyMillsWA_2005_SeanMcClean.jpg",
       "altText": "Cirrostratus at night causing a moon halo",
       "text": "Cirrostratus is a high-altitude, very thin, generally uniform stratiform genus-type of cloud. It is made out of ice-crystals, which are pieces of frozen water. It is difficult to detect and it can make halos.",
-      "altitude": "High"
+      "year": "High"
     },
     {
       "title": "Cirrocumulus Clouds",
-      "wikiLink": "https://en.wikipedia.org/wiki/Cirrocumulus_cloud",
+      "buyLink": "https://en.wikipedia.org/wiki/Cirrocumulus_cloud",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Cirrocumulus_undulatus.jpg",
       "altText": "A smattering of clouds with a tree sticking up from the bottom of the image.",
       "text": "Cirrocumulus is one of the three main genus types of high-altitude tropospheric clouds, the other two being cirrus and cirrostratus. They usually occur at an altitude of 5 to 12 km (16,000 to 39,000 ft).",
-      "altitude": "High"
+      "year": "High"
     },
     {
       "title": "Altostratus Clouds",
-      "wikiLink": "https://en.wikipedia.org/wiki/Altostratus_cloud",
+      "buyLink": "https://en.wikipedia.org/wiki/Altostratus_cloud",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/eb/2020-12-31_16_06_58_Altostratus_with_a_wavy_undulating_base_above_the_Dulles_section_of_Sterling%2C_Loudoun_County%2C_Virginia.jpg",
       "altText": "Cloud showing distinctive parallel bands",
       "text": "Altostratus is a middle-altitude cloud genus made up of water droplets, ice crystals, or a mixture of the two. Altostratus clouds are formed when large masses of warm, moist air rise, causing water vapor to condense.",
-      "altitude": "Mid-level"
-    },
-    {
-      "title": "Altocumulus Clouds",
-      "wikiLink": "https://en.wikipedia.org/wiki/Altocumulus_cloud",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Altocumulus.jpg",
-      "altText": "Blue sky with a smattering of small clouds.",
-      "text": "Altocumulus (From Latin Altus, high, cumulus, heaped is a middle-altitude cloud genus that belongs mainly to the stratocumuliform physical category characterized by globular masses or rolls in layers or patches, the individual elements being larger and darker than those of cirrocumulus and smaller than those of stratocumulus.",
-      "altitude": "Mid-level"
-    },
-    {
-      "title": "Stratus clouds",
-      "wikiLink": "https://en.wikipedia.org/wiki/Stratus_cloud",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Stratus-Opacus-Uniformis.jpg",
-      "altText": "An open snowy field, the sky is foggy.",
-      "text": "Stratus clouds are low-level clouds characterized by horizontal layering with a uniform base, as opposed to convective or cumuliform clouds formed by rising thermals.",
-      "altitude": "Low-level"
-    },
-    {
-      "title": "Cumulus clouds",
-      "wikiLink": "https://en.wikipedia.org/wiki/Cumulus_cloud",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3c/GoldenMedows.jpg",
-      "altText": "A grassy field with plump clouds and blue sky.",
-      "text": "Cumulus clouds are clouds that have flat bases and are often described as puffy, cotton-like, or fluffy in appearance. Their name derives from the Latin cumulus, meaning 'heap' or 'pile'.",
-      "altitude": "Low-level"
-    },
-    {
-      "title": "Stratocumulus clouds",
-      "wikiLink": "https://en.wikipedia.org/wiki/Stratocumulus_cloud",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Above_the_Clouds.jpg",
-      "altText": "Aerial photograph of Stratocumulus perlucidus clouds over the midwestern United States",
-      "text": "A stratocumulus cloud, occasionally called a cumulostratus, belongs to a genus-type of clouds characterized by large dark, rounded masses, usually in groups, lines, or waves, the individual elements being larger than those in altocumulus, and the whole being at a lower height, usually below 2,000 metres (6,600 ft).",
-      "altitude": "Low-level"
-    },
-    {
-      "title": "Nimbostratus cloud",
-      "wikiLink": "https://en.wikipedia.org/wiki/Nimbostratus_cloud",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Ns1.jpg",
-      "altText": "Tree in the distane. Sun light shines through the clouds.",
-      "text": "A nimbostratus cloud is a multilevel, amorphous, nearly uniform, and often dark-grey cloud that usually produces continuous rain, snow, or sleet, but no lightning or thunder.",
-      "altitude": "Low-level"
-    },
-    {
-      "title": "Cumulus congestus cloud",
-      "wikiLink": "https://en.wikipedia.org/wiki/Cumulus_congestus_cloud",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Cahokia_1.jpg/800px-Cahokia_1.jpg",
-      "altText": "Large plumpy cloud floating past a small building",
-      "text": "Cumulus congestus clouds, also known as towering cumulus, are a form of cumulus that can be based in the low or middle height ranges. They achieve considerable vertical development in areas of deep, moist convection.",
-      "altitude": "Low-level"
-    },
-    {
-      "title": "Cumulonimbus cloud",
-      "wikiLink": "https://en.wikipedia.org/wiki/Cumulonimbus_cloud",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Willow_Fire_AZ_7_8_2004_SE_burnout_035-001.jpg",
-      "altText": "Extremely dramatic cloud that almost looks like an explosion.",
-      "text": "Cumulonimbus (from Latin cumulus 'heaped', and nimbus 'rainstorm') is a dense, towering vertical cloud, typically forming from water vapor condensing in the lower troposphere that builds upward carried by powerful buoyant air currents.",
-      "altitude": "Low-level"
+      "year": "Mid-level"
     }
 ]  
