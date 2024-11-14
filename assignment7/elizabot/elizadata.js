@@ -3,20 +3,19 @@
 // [cf: Communications of the ACM, Vol. 9, #1 (January 1966): p 36-45.]
 
 var elizaInitials = [
-"Hey! Let's chat about plants.",
-// additions (not original)
-"What's your favorite plant?",
-"How are your plants doing?"
+    "Hello, I'm your gardening assistant. What would you like help with today?",
+    "Hi there! Tell me what you need help with in your garden.",
+    "How can I assist you in taking care of your plants today?"
 ];
-
+  
 var elizaFinals = [
-"See you! It was nice talking to you.",
-// additions (not original)
-"Have a nice day!",
-"Be kind to plants :)",
-"Talk to you later!",
-"Bring a plant next time!"
+    "Goodbye! I hope your plants thrive.",
+    "It was a pleasure helping you with your garden. Take care!",
+    "I look forward to assisting you with your plants again. Goodbye!",
+    "Time to water your plants! Goodbye for now.",
+    "Keep your garden healthy! Until next time!"
 ];
+  
 
 var elizaQuits = [
 "bye",
@@ -61,552 +60,389 @@ var elizaPosts = [
 ];
 
 var elizaSynons = {
-"be": ["am", "is", "are", "was"],
-"belief": ["feel", "think", "believe", "wish"],
-"cannot": ["can't"],
-"desire": ["want", "need"],
-"everyone": ["everybody", "nobody", "noone"],
-"family": ["mother", "mom", "father", "dad", "sister", "brother", "wife", "children", "child"],
-"happy": ["elated", "glad", "better"],
-"sad": ["unhappy", "depressed", "sick"]
-};
+    "plant": ["flower", "tree", "bush", "succulent", "herb", "tomato", "vegetable"],
+    "watering": ["irrigating", "watering", "sprinkling", "drinking"],
+    "sunlight": ["light", "sun", "sunny", "bright"],
+    "soil": ["dirt", "earth", "ground", "compost"],
+    "healthy": ["strong", "vibrant", "lush", "growing well"],
+    "dead": ["dying", "withering", "wilting"],
+    "growth": ["bloom", "growth", "flowering", "sprouting"],
+    "care": ["tend to", "look after", "manage", "cultivate"]
+};  
 
 var elizaKeywords = [
-
-/*
-  Array of
-  ["<key>", <rank>, [
-    ["<decomp>", [
-      "<reasmb>",
-      "<reasmb>",
-      "<reasmb>"
+    ["xnone", 0, [
+        ["*", [
+            "I'm not sure I understand. Could you tell me more about your plants?",
+            "Please tell me more about your garden.",
+            "What plants are you focusing on?",
+            "Tell me about your gardening experience."
+        ]]
     ]],
-    ["<decomp>", [
-      "<reasmb>",
-      "<reasmb>",
-      "<reasmb>"
+    ["watering", 0, [
+        ["* watering *", [
+            "How often do you water your plants?",
+            "Are your plants getting enough water?",
+            "Do you use a specific watering method?",
+            "What kind of plants are you watering?"
+        ]]
+    ]],
+    ["sunlight", 0, [
+        ["* sunlight *", [
+            "Do your plants get enough sunlight?",
+            "What direction does your garden face for sunlight?",
+            "Are you growing plants that need full sunlight or partial shade?"
+        ]]
+    ]],
+    ["soil", 0, [
+        ["* soil *", [
+            "What type of soil are you using for your plants?",
+            "Have you considered adding compost to your soil?",
+            "Is your soil rich in nutrients for healthy plant growth?"
+        ]]
+    ]],
+    ["plants", 5, [
+        ["* plants *", [
+            "What kind of plants are you growing?",
+            "Are you growing indoor or outdoor plants?",
+            "What types of plants need attention in your garden right now?",
+            "Tell me more about your plants."
+        ]],
+        ["* do you have * plants", [
+            "I am just a bot, but I know a lot about plants. What types are you interested in?",
+            "What plants do you have in your garden right now?"
+        ]]
+    ]],
+    ["succulents", 5, [
+        ["* succulents *", [
+            "Succulents are great low-maintenance plants! Do you know how to care for them?",
+            "Do you water your succulents differently from other plants?",
+            "What kinds of succulents are you growing?"
+        ]]
+    ]],
+    ["tomatoes", 5, [
+        ["* tomatoes *", [
+            "Tomatoes need plenty of sunlight and regular watering. How are your tomatoes doing?",
+            "What variety of tomatoes are you growing?",
+            "Are you using stakes or cages for your tomato plants?"
+        ]]
+    ]],
+    ["herbs", 5, [
+        ["* herbs *", [
+            "What herbs do you have in your garden?",
+            "Herbs like basil and thyme can be great for cooking. Do you use yours for cooking?",
+            "How do you care for your herb plants?"
+        ]]
+    ]],
+    ["container", 0, [
+        ["* container *", [
+            "Are you growing plants in containers or raised beds?",
+            "How are your container plants doing?",
+            "Container gardening can be very rewarding. Do you find it easy to manage?"
+        ]]
+    ]],
+    ["pruning", 0, [
+        ["* pruning *", [
+            "Have you pruned your plants recently?",
+            "When was the last time you pruned your plants for better growth?",
+            "What type of pruning method do you prefer for your plants?"
+        ]]
+    ]],
+    ["watering", 0, [
+        ["* how often do you water *", [
+        "How often do you typically water your plants?",
+        "What’s your watering schedule like for your garden?",
+        "I recommend watering most plants every 1-2 weeks, depending on the type."
+        ]],
+        ["* do you water *", [
+        "Do you water them thoroughly or just a little at a time?",
+        "What’s your method for watering your plants?",
+        "Are you using any self-watering techniques?"
+        ]]
+    ]],
+    ["houseplant", 10, [
+        ["* houseplant *", [
+            "Do you enjoy caring for your houseplants?",
+            "How often do you water your houseplants?",
+            "What type of houseplant are you currently taking care of?",
+            "What is your favorite houseplant?",
+            "Is your houseplant thriving or struggling?",
+            "What kind of lighting does your houseplant prefer?"
+        ]],
+        ["* succulent *", [
+            "Do you know the specific needs of your succulents?",
+            "Succulents are low-maintenance plants. How often do you water them?",
+            "What type of succulent do you have in your collection?",
+            "Are your succulents getting enough sunlight?",
+            "What do you like most about succulents?"
+        ]],
+        ["* fern *", [
+            "Ferns love humidity. How do you keep the air moist for your ferns?",
+            "Do you have a favorite type of fern?",
+            "Ferns prefer indirect sunlight. Do you place them near a window?",
+            "How often do you water your ferns?"
+        ]],
+        ["* cactus *", [
+            "Cacti need very little water. How often do you water yours?",
+            "Are you keeping your cactus in a sunny spot?",
+            "Do you have trouble with overwatering your cactus?",
+            "Cacti like dry, well-drained soil. Does your cactus thrive in it?"
+        ]],
+    ]],
+    ["outdoorplant", 10, [
+        ["* tomato *", [
+            "Tomatoes love sunlight. How much sun does your tomato plant get?",
+            "Are your tomatoes showing signs of fruit yet?",
+            "How do you manage watering your tomatoes during hot weather?",
+            "Tomatoes need well-drained soil. How is the drainage in your garden?"
+        ]],
+        ["* basil *", [
+            "Basil needs warmth and sunlight. How does your basil plant look?",
+            "Are you harvesting leaves from your basil yet?",
+            "Basil is a great herb for cooking. Do you use it often?",
+            "How often do you prune your basil to encourage more growth?"
+        ]],
+        ["* pepper *", [
+            "Peppers love heat! Is your pepper plant thriving in warm conditions?",
+            "Are you seeing any flowers on your pepper plant?",
+            "How do you keep your pepper plants healthy throughout the growing season?",
+            "Do you know the best time to harvest your peppers?"
+        ]],
+        ["* rose *", [
+            "Roses need a lot of sun to bloom beautifully. Is yours getting enough light?",
+            "How often do you fertilize your rose bush?",
+            "Do you prune your rose plant regularly to encourage healthy growth?",
+            "What color roses are you growing in your garden?"
+        ]],
+        ["* lavender *", [
+            "Lavender loves full sunlight and well-drained soil. How are your plants doing?",
+            "Lavender is very fragrant. Do you use it for cooking or aromatherapy?",
+            "Are you growing lavender in a pot or directly in the ground?",
+            "How often do you water your lavender plant?"
+        ]],
+        ["* cucumber *", [
+            "Cucumbers need space to grow. Do your cucumber vines have room to spread out?",
+            "How are your cucumbers doing in terms of growth?",
+            "Do you know how often cucumbers need to be watered?",
+            "Cucumbers are very sensitive to temperature. Have you had any heat issues with your plants?"
+        ]],
+    ]],
+    ["soil", 5, [
+        ["* soil *", [
+            "What type of soil are you using for your plants?",
+            "Is your soil well-draining?",
+            "Do you amend your soil with compost or other organic material?",
+            "Soil pH is important for plant health. Have you checked yours recently?",
+            "Do you use a specific type of soil for different kinds of plants?"
+        ]],
+        ["* fertilizer *", [
+            "Do you use fertilizer for your houseplants or garden plants?",
+            "How often do you fertilize your plants?",
+            "Are you using organic or synthetic fertilizer?",
+            "Different plants require different types of fertilizer. Have you researched the best for yours?"
+        ]],
+    ]],
+    ["watering", 5, [
+        ["* water *", [
+            "How often do you water your plants?",
+            "Do you let the soil dry out completely before watering?",
+            "Overwatering can be a problem. How do you avoid it?",
+            "Do you water your plants in the morning or evening?",
+            "How do you monitor the moisture levels in your soil?"
+        ]],
+        ["* dry *", [
+            "Is the soil in your garden drying out too quickly?",
+            "If your soil dries out fast, have you thought about mulching?",
+            "How do you keep the moisture in the soil during hot weather?",
+            "Dry soil can stress plants. Do you have any strategies to retain moisture?"
+        ]],
+        ["* moist *", [
+            "Moist soil is ideal for many plants. Are you achieving that balance?",
+            "Do you check the moisture level before watering?",
+            "Plants like ferns and tropical houseplants need moist environments. How do you manage that?"
+        ]],
+    ]],
+    ["light", 5, [
+        ["* light *", [
+            "Is your plant getting enough light?",
+            "Some plants need direct sunlight, others prefer indirect light. What does your plant require?",
+            "Do you have a grow light for your indoor plants?",
+            "Are you considering moving your plant to a brighter location?"
+        ]],
+        ["* sun *", [
+            "Does your plant get full sun or partial shade?",
+            "Tomatoes, peppers, and basil love full sunlight. Are they in the right spot?",
+            "Do you move your indoor plants around to catch more sunlight?",
+            "Are you using any special lighting for your plants during the winter months?"
+        ]],
+    ]],
+    ["pest", 5, [
+        ["* pest *", [
+            "Are you dealing with any pests in your garden?",
+            "What kind of pests are bothering your plants?",
+            "Do you use any natural remedies to keep pests away from your plants?",
+            "Have you tried any organic pest control methods?"
+        ]],
+        ["* aphid *", [
+            "Aphids can be a nuisance. Are they affecting your plants?",
+            "Have you considered using neem oil to get rid of aphids?",
+            "Aphids like to feed on tender new growth. How is your plant doing?",
+            "Are you treating your plants for aphids regularly?"
+        ]],
+        ["* spider mite *", [
+            "Spider mites can be tricky. Are you noticing webbing on your plants?",
+            "How do you manage spider mites in your garden?",
+            "Have you tried spraying your plants with a mild soap solution to get rid of spider mites?"
+        ]],
+        ["* mealybug *", [
+            "Mealybugs are white, cotton-like pests that can attack the leaves and stems. Are you seeing any white fuzz on your plant?",
+            "Mealybugs can be removed with a cotton swab dipped in rubbing alcohol or insecticidal soap."
+        ]]
+    ]],
+    ["growth", 5, [
+        ["* growth *", [
+            "How is the growth of your plants progressing?",
+            "Is your plant growing as expected?",
+            "Are you noticing any signs of slow growth?",
+            "What steps have you taken to promote healthy plant growth?"
+        ]],
+        ["* bloom *", [
+            "Is your plant blooming yet?",
+            "What kind of flowers are you hoping to see on your plant?",
+            "Some plants need special care to bloom. Have you researched what your plant requires?"
+        ]],
+        ["* pruning *", [
+            "Pruning helps with growth. Do you regularly prune your plants?",
+            "Are you familiar with the best time to prune your plant?",
+            "What parts of the plant do you prune to encourage more growth?"
+        ]],
+    ]],
+    ["dyingplant", 10, [
+        ["* dying *", [
+            "It sounds like your plant might be struggling. What symptoms are you noticing?",
+            "What type of plant is it? Some plants have specific care needs.",
+            "Are the leaves turning yellow or brown? That could indicate a problem.",
+            "What kind of environment is your plant in? Light, temperature, and humidity all affect plant health.",
+            "Have you checked the roots to see if there are any signs of rot?"
+        ]],
+        ["* wilting *", [
+            "Wilting can be a sign of underwatering or overwatering. How often are you watering your plant?",
+            "Are the leaves limp and drooping? Sometimes this happens when plants aren't getting enough water.",
+            "Have you checked the soil to see if it's too dry or too soggy?"
+        ]],
+        ["* brown leaves *", [
+            "Brown leaves can be caused by a few things. Is the plant getting enough water?",
+            "If the edges of the leaves are turning brown, it might be a sign of overwatering or underwatering.",
+            "Are the brown spots on the leaves dry and crispy, or are they soft and mushy?",
+            "It could also be a sign of too much direct sunlight or nutrient deficiencies."
+        ]],
+        ["* yellow leaves *", [
+            "Yellowing leaves can be a sign of overwatering or nutrient deficiencies. Have you been watering regularly?",
+            "Is the plant getting enough sunlight? Sometimes too little light causes leaves to yellow.",
+            "Check the roots. Yellow leaves might indicate root rot or a need for repotting."
+        ]],
+        ["* no new growth *", [
+            "Lack of new growth could mean your plant isn't getting enough light or nutrients.",
+            "Is the plant in a location where it gets plenty of indirect sunlight?",
+            "Have you fertilized the plant recently? Sometimes a lack of nutrients can stunt growth."
+        ]],
+        ["* dropping leaves *", [
+            "If your plant is losing leaves, it might be stressed from changes in temperature or humidity.",
+            "Are you overwatering or underwatering? Either of those can cause leaf drop.",
+            "Have you moved the plant recently? Sometimes plants drop leaves after being relocated."
+        ]],
+    ]],
+    ["overwatering", 5, [
+        ["* overwater *", [
+            "Overwatering is a common problem for many plants. Have you noticed soggy soil or water sitting in the pot?",
+            "Is your plant in a pot with drainage holes? Without proper drainage, the water can't escape.",
+            "Do you let the soil dry out between waterings? Plants like succulents and cacti need less frequent watering."
+        ]],
+        ["* root rot *", [
+            "Root rot is often caused by overwatering. Have you checked the roots for signs of mushiness or discoloration?",
+            "If your plant is showing signs of root rot, you may need to trim away the affected roots and repot it in fresh, well-draining soil."
+        ]],
+        ["* soggy soil *", [
+            "Soggy soil could indicate that you are overwatering or that the plant's pot isn't draining properly.",
+            "How often are you watering your plant? Sometimes letting the soil dry out completely between waterings helps prevent overwatering."
+        ]],
+        ["* yellowing leaves *", [
+            "Yellowing leaves can be a sign of overwatering. Have you noticed any unusual symptoms like a musty smell or mold on the soil surface?",
+            "If your plant is getting too much water, it may not be able to absorb nutrients properly."
+        ]],
+    ]],
+    ["underwatering", 5, [
+        ["* underwater *", [
+            "Underwatering is another common issue. Are you letting the soil dry out too much between waterings?",
+            "When was the last time you watered your plant? Plants like ferns and tropicals prefer moist soil.",
+            "How does the soil feel? If it’s dry and crumbly, your plant might be underwatered."
+        ]],
+        ["* dry leaves *", [
+            "Dry, crispy leaves are often a sign of underwatering. Are you watering the plant regularly?",
+            "Sometimes the edges of the leaves turn brown and dry out when a plant doesn't get enough water."
+        ]],
+        ["* wilting *", [
+            "Wilting can also be caused by underwatering. How do the soil and roots feel? Is the soil very dry?",
+            "Make sure you're watering thoroughly, so the roots get enough moisture."
+        ]],
+        ["* crispy edges *", [
+            "Crispy leaf edges can indicate underwatering or too much dry air. Have you tried increasing humidity around your plant?",
+            "Is your plant in a dry or hot area of your home? If so, it might need more frequent watering or humidity."
+        ]],
+    ]],
+    ["lightissues", 5, [
+        ["* too much sun *", [
+            "Some plants can get sunburned if they're in too much direct sunlight. Are your plant's leaves turning brown or crispy?",
+            "Do you notice your plant getting scorched or burned by the sun? It might need to be moved to a shadier spot."
+        ]],
+        ["* too little sun *", [
+            "If your plant isn't getting enough light, it might start to stretch or become leggy. How much light does it get each day?",
+            "Some plants, like succulents, need bright direct sunlight. Others, like ferns, prefer indirect light."
+        ]],
+        ["* leggy *", [
+            "A leggy appearance could mean your plant is stretching toward a light source. Is it in a place that gets enough sunlight?",
+            "If your plant is becoming leggy, it may need more light to stay compact and healthy."
+        ]],
+    ]],
+    ["rootbound", 5, [
+        ["* rootbound *", [
+            "Is your plant rootbound? You can tell if roots are growing out of the drainage holes or if they’re circling the bottom of the pot.",
+            "If your plant is rootbound, it might not be able to take up enough water or nutrients. Repotting it into a larger container might help."
+        ]],
+        ["* pot *", [
+            "Have you checked to see if your plant needs a bigger pot? Sometimes plants stop growing because their roots run out of space.",
+            "Repotting a rootbound plant can give it a fresh start and room to grow. What size pot are you using?"
+        ]],
+    ]],
+    ["dyingplant", 10, [
+        ["* plant is dying *", [
+            "I’m sorry to hear your plant is struggling. Could you describe the symptoms more specifically? Please choose one of the following options:",
+            "1. Yellowing leaves",
+            "2. Brown, crispy edges",
+            "3. Wilting or drooping",
+            "4. Leaves falling off",
+        ]],
+        ["1", [
+            "Yellowing leaves can mean overwatering or too little light. How often are you watering your plant? Is it getting enough sunlight?"
+        ]],
+        ["2", [
+            "Brown, crispy edges can be a sign of underwatering or too much direct sunlight. How does the soil feel?"
+        ]],
+        ["3", [
+            "Wilting can be caused by both overwatering and underwatering. Can you check if the soil is dry or soggy?"
+        ]],
+        ["4", [
+            "Leaf drop can happen for several reasons. Have you recently moved your plant or changed its environment?"
+        ]],
     ]]
-  ]]
-*/
-
-["xnone", 0, [
- ["*", [
-     "I'm not sure I understand you fully.",
-     "Please go on.",
-     "What does that suggest to you ?",
-     "Do you feel strongly about discussing such things ?",
-     "That is interesting.  Please continue.",
-     "Tell me more about that.",
-     "Does talking about this bother you ?"
-  ]]
-]],
-["sorry", 0, [
- ["*", [
-     "Please don't apologise.",
-     "Apologies are not necessary.",
-     "I've told you that apologies are not required.",
-     "It did not bother me.  Please continue."
-  ]]
-]],
-["apologise", 0, [
- ["*", [
-     "goto sorry"
-  ]]
-]],
-["remember", 5, [
- ["* i remember *", [
-     "Do you often think of (2) ?",
-     "Does thinking of (2) bring anything else to mind ?",
-     "What else do you recollect ?",
-     "Why do you remember (2) just now ?",
-     "What in the present situation reminds you of (2) ?",
-     "What is the connection between me and (2) ?",
-     "What else does (2) remind you of ?"
-  ]],
- ["* do you remember *", [
-     "Did you think I would forget (2) ?",
-     "Why do you think I should recall (2) now ?",
-     "What about (2) ?",
-     "goto what",
-     "You mentioned (2) ?"
-  ]],
- ["* you remember *", [
-     "How could I forget (2) ?",
-     "What about (2) should I remember ?",
-     "goto you"
-  ]]
-]],
-["forget", 5, [
- ["* i forget *", [
-     "Can you think of why you might forget (2) ?",
-     "Why can't you remember (2) ?",
-     "How often do you think of (2) ?",
-     "Does it bother you to forget that ?",
-     "Could it be a mental block ?",
-     "Are you generally forgetful ?",
-     "Do you think you are suppressing (2) ?"
-  ]],
- ["* did you forget *", [
-     "Why do you ask ?",
-     "Are you sure you told me ?",
-     "Would it bother you if I forgot (2) ?",
-     "Why should I recall (2) just now ?",
-     "goto what",
-     "Tell me more about (2)."
-  ]]
-]],
-["if", 3, [
- ["* if *", [
-     "Do you think it's likely that (2) ?",
-     "Do you wish that (2) ?",
-     "What do you know about (2) ?",
-     "Really, if (2) ?",
-     "What would you do if (2) ?",
-     "But what are the chances that (2) ?",
-     "What does this speculation lead to ?"
-  ]]
-]],
-["dreamed", 4, [
- ["* i dreamed *", [
-     "Really, (2) ?",
-     "Have you ever fantasized (2) while you were awake ?",
-     "Have you ever dreamed (2) before ?",
-     "goto dream"
-  ]]
-]],
-["dream", 3, [
- ["*", [
-     "What does that dream suggest to you ?",
-     "Do you dream often ?",
-     "What persons appear in your dreams ?",
-     "Do you believe that dreams have something to do with your problem ?"
-  ]]
-]],
-["perhaps", 0, [
- ["*", [
-     "You don't seem quite certain.",
-     "Why the uncertain tone ?",
-     "Can't you be more positive ?",
-     "You aren't sure ?",
-     "Don't you know ?",
-     "How likely, would you estimate ?"
-  ]]
-]],
-["name", 15, [
- ["*", [
-     "I am not interested in names.",
-     "I've told you before, I don't care about names -- please continue."
-  ]]
-]],
-["deutsch", 0, [
- ["*", [
-     "goto xforeign",
-     "I told you before, I don't understand German."
-  ]]
-]],
-["francais", 0, [
- ["*", [
-     "goto xforeign",
-     "I told you before, I don't understand French."
-  ]]
-]],
-["italiano", 0, [
- ["*", [
-     "goto xforeign",
-     "I told you before, I don't understand Italian."
-  ]]
-]],
-["espanol", 0, [
- ["*", [
-     "goto xforeign",
-     "I told you before, I don't understand Spanish."
-  ]]
-]],
-["xforeign", 0, [
- ["*", [
-     "I speak only English."
-  ]]
-]],
-["hello", 0, [
- ["*", [
-     "How do you do.  Please state your problem.",
-     "Hi.  What seems to be your problem ?"
-  ]]
-]],
-["computer", 50, [
- ["*", [
-     "Do computers worry you ?",
-     "Why do you mention computers ?",
-     "What do you think machines have to do with your problem ?",
-     "Don't you think computers can help people ?",
-     "What about machines worries you ?",
-     "What do you think about machines ?",
-     "You don't think I am a computer program, do you ?"
-  ]]
-]],
-["am", 0, [
- ["* am i *", [
-     "Do you believe you are (2) ?",
-     "Would you want to be (2) ?",
-     "Do you wish I would tell you you are (2) ?",
-     "What would it mean if you were (2) ?",
-     "goto what"
-  ]],
- ["* i am *", [
-     "goto i"
-  ]],
- ["*", [
-     "Why do you say 'am' ?",
-     "I don't understand that."
-  ]]
-]],
-["are", 0, [
- ["* are you *", [
-     "Why are you interested in whether I am (2) or not ?",
-     "Would you prefer if I weren't (2) ?",
-     "Perhaps I am (2) in your fantasies.",
-     "Do you sometimes think I am (2) ?",
-     "goto what",
-     "Would it matter to you ?",
-     "What if I were (2) ?"
-  ]],
- ["* you are *", [
-     "goto you"
-  ]],
- ["* are *", [
-     "Did you think they might not be (2) ?",
-     "Would you like it if they were not (2) ?",
-     "What if they were not (2) ?",
-     "Are they always (2) ?",
-     "Possibly they are (2).",
-     "Are you positive they are (2) ?"
-  ]]
-]],
-["your", 0, [
- ["* your *", [
-     "Why are you concerned over my (2) ?",
-     "What about your own (2) ?",
-     "Are you worried about someone else's (2) ?",
-     "Really, my (2) ?",
-     "What makes you think of my (2) ?",
-     "Do you want my (2) ?"
-  ]]
-]],
-["was", 2, [
- ["* was i *", [
-     "What if you were (2) ?",
-     "Do you think you were (2) ?",
-     "Were you (2) ?",
-     "What would it mean if you were (2) ?",
-     "What does ' (2) ' suggest to you ?",
-     "goto what"
-  ]],
- ["* i was *", [
-     "Were you really ?",
-     "Why do you tell me you were (2) now ?",
-     "Perhaps I already know you were (2)."
-  ]],
- ["* was you *", [
-     "Would you like to believe I was (2) ?",
-     "What suggests that I was (2) ?",
-     "What do you think ?",
-     "Perhaps I was (2).",
-     "What if I had been (2) ?"
-  ]]
-]],
-["i", 0, [
- ["* i @desire *", [
-     "What would it mean to you if you got (3) ?",
-     "Why do you want (3) ?",
-     "Suppose you got (3) soon.",
-     "What if you never got (3) ?",
-     "What would getting (3) mean to you ?",
-     "What does wanting (3) have to do with this discussion ?"
-  ]],
- ["* i am* @sad *", [
-     "I am sorry to hear that you are (3).",
-     "Do you think coming here will help you not to be (3) ?",
-     "I'm sure it's not pleasant to be (3).",
-     "Can you explain what made you (3) ?"
-  ]],
- ["* i am* @happy *", [
-     "How have I helped you to be (3) ?",
-     "Has your treatment made you (3) ?",
-     "What makes you (3) just now ?",
-     "Can you explain why you are suddenly (3) ?"
-  ]],
- ["* i was *", [
-     "goto was"
-  ]],
- ["* i @belief i *", [
-     "Do you really think so ?",
-     "But you are not sure you (3).",
-     "Do you really doubt you (3) ?"
-  ]],
- ["* i* @belief *you *", [
-     "goto you"
-  ]],
- ["* i am *", [
-     "Is it because you are (2) that you came to me ?",
-     "How long have you been (2) ?",
-     "Do you believe it is normal to be (2) ?",
-     "Do you enjoy being (2) ?",
-     "Do you know anyone else who is (2) ?"
-  ]],
- ["* i @cannot *", [
-     "How do you know that you can't (3) ?",
-     "Have you tried ?",
-     "Perhaps you could (3) now.",
-     "Do you really want to be able to (3) ?",
-     "What if you could (3) ?"
-  ]],
- ["* i don't *", [
-     "Don't you really (2) ?",
-     "Why don't you (2) ?",
-     "Do you wish to be able to (2) ?",
-     "Does that trouble you ?"
-  ]],
- ["* i feel *", [
-     "Tell me more about such feelings.",
-     "Do you often feel (2) ?",
-     "Do you enjoy feeling (2) ?",
-     "Of what does feeling (2) remind you ?"
-  ]],
- ["* i * you *", [
-     "Perhaps in your fantasies we (2) each other.",
-     "Do you wish to (2) me ?",
-     "You seem to need to (2) me.",
-     "Do you (2) anyone else ?"
-  ]],
- ["*", [
-     "You say (1) ?",
-     "Can you elaborate on that ?",
-     "Do you say (1) for some special reason ?",
-     "That's quite interesting."
-  ]]
-]],
-["you", 0, [
- ["* you remind me of *", [
-     "goto alike"
-  ]],
- ["* you are *", [
-     "What makes you think I am (2) ?",
-     "Does it please you to believe I am (2) ?",
-     "Do you sometimes wish you were (2) ?",
-     "Perhaps you would like to be (2)."
-  ]],
- ["* you* me *", [
-     "Why do you think I (2) you ?",
-     "You like to think I (2) you -- don't you ?",
-     "What makes you think I (2) you ?",
-     "Really, I (2) you ?",
-     "Do you wish to believe I (2) you ?",
-     "Suppose I did (2) you -- what would that mean ?",
-     "Does someone else believe I (2) you ?"
-  ]],
- ["* you *", [
-     "We were discussing you -- not me.",
-     "Oh, I (2) ?",
-     "You're not really talking about me -- are you ?",
-     "What are your feelings now ?"
-  ]]
-]],
-["yes", 0, [
- ["*", [
-     "You seem to be quite positive.",
-     "You are sure.",
-     "I see.",
-     "I understand."
-  ]]
-]],
-["no", 0, [
- ["* no one *", [
-     "Are you sure, no one (2) ?",
-     "Surely someone (2) .",
-     "Can you think of anyone at all ?",
-     "Are you thinking of a very special person ?",
-     "Who, may I ask ?",
-     "You have a particular person in mind, don't you ?",
-     "Who do you think you are talking about ?"
-  ]],
- ["*", [
-     "Are you saying no just to be negative?",
-     "You are being a bit negative.",
-     "Why not ?",
-     "Why 'no' ?"
-  ]]
-]],
-["my", 2, [
- ["$ * my *", [
-     "Does that have anything to do with the fact that your (2) ?",
-     "Lets discuss further why your (2).",
-     "Earlier you said your (2).",
-     "But your (2)."
-  ]],
- ["* my* @family *", [
-     "Tell me more about your family.",
-     "Who else in your family (4) ?",
-     "Your (3) ?",
-     "What else comes to your mind when you think of your (3) ?"
-  ]],
- ["* my *", [
-     "Your (2) ?",
-     "Why do you say your (2) ?",
-     "Does that suggest anything else which belongs to you ?",
-     "Is it important to you that your (2) ?"
-  ]]
-]],
-["can", 0, [
- ["* can you *", [
-     "You believe I can (2) don't you ?",
-     "goto what",
-     "You want me to be able to (2).",
-     "Perhaps you would like to be able to (2) yourself."
-  ]],
- ["* can i *", [
-     "Whether or not you can (2) depends on you more than on me.",
-     "Do you want to be able to (2) ?",
-     "Perhaps you don't want to (2).",
-     "goto what"
-  ]]
-]],
-["what", 0, [
- ["*", [
-     "Why do you ask ?",
-     "Does that question interest you ?",
-     "What is it you really want to know ?",
-     "Are such questions much on your mind ?",
-     "What answer would please you most ?",
-     "What do you think ?",
-     "What comes to mind when you ask that ?",
-     "Have you asked such questions before ?",
-     "Have you asked anyone else ?"
-  ]]
-]],
-["who", 0, [
- ["who *", [
-     "goto what"
-  ]]
-]],
-["when", 0, [
- ["when *", [
-     "goto what"
-  ]]
-]],
-["where", 0, [
- ["where *", [
-     "goto what"
-  ]]
-]],
-["how", 0, [
- ["how *", [
-     "goto what"
-  ]]
-]],
-["because", 0, [
- ["*", [
-     "Is that the real reason ?",
-     "Don't any other reasons come to mind ?",
-     "Does that reason seem to explain anything else ?",
-     "What other reasons might there be ?"
-  ]]
-]],
-["why", 0, [
- ["* why don't you *", [
-     "Do you believe I don't (2) ?",
-     "Perhaps I will (2) in good time.",
-     "Should you (2) yourself ?",
-     "You want me to (2) ?",
-     "goto what"
-  ]],
- ["* why can't i *", [
-     "Do you think you should be able to (2) ?",
-     "Do you want to be able to (2) ?",
-     "Do you believe this will help you to (2) ?",
-     "Have you any idea why you can't (2) ?",
-     "goto what"
-  ]],
- ["*", [
-     "goto what"
-  ]]
-]],
-["everyone", 2, [
- ["* @everyone *", [
-     "Really, (2) ?",
-     "Surely not (2).",
-     "Can you think of anyone in particular ?",
-     "Who, for example?",
-     "Are you thinking of a very special person ?",
-     "Who, may I ask ?",
-     "Someone special perhaps ?",
-     "You have a particular person in mind, don't you ?",
-     "Who do you think you're talking about ?"
-  ]]
-]],
-["everybody", 2, [
- ["*", [
-     "goto everyone"
-  ]]
-]],
-["nobody", 2, [
- ["*", [
-     "goto everyone"
-  ]]
-]],
-["noone", 2, [
- ["*", [
-     "goto everyone"
-  ]]
-]],
-["always", 1, [
- ["*", [
-     "Can you think of a specific example ?",
-     "When ?",
-     "What incident are you thinking of ?",
-     "Really, always ?"
-  ]]
-]],
-["alike", 10, [
- ["*", [
-     "In what way ?",
-     "What resemblence do you see ?",
-     "What does that similarity suggest to you ?",
-     "What other connections do you see ?",
-     "What do you suppose that resemblence means ?",
-     "What is the connection, do you suppose ?",
-     "Could there really be some connection ?",
-     "How ?"
-  ]]
-]],
-["like", 10, [
- ["* @be *like *", [
-     "goto alike"
-  ]]
-]],
-["different", 0, [
- ["*", [
-     "How is it different ?",
-     "What differences do you see ?",
-     "What does that difference suggest to you ?",
-     "What other distinctions do you see ?",
-     "What do you suppose that disparity means ?",
-     "Could there be some connection, do you suppose ?",
-     "How ?"
-  ]]
-]]
-
 ];
 
 // regexp/replacement pairs to be performed as final cleanings
 // here: cleanings for multiple bots talking to each other
 var elizaPostTransforms = [
-	/ old old/g, " old",
-	/\bthey were( not)? me\b/g, "it was$1 me",
-	/\bthey are( not)? me\b/g, "it is$1 me",
-	/Are they( always)? me\b/, "it is$1 me",
-	/\bthat your( own)? (\w+)( now)? \?/, "that you have your$1 $2 ?",
-	/\bI to have (\w+)/, "I have $1",
-	/Earlier you said your( own)? (\w+)( now)?\./, "Earlier you talked about your $2."
+    /\bmachine\b/g, "garden",
+    /\bcomputer\b/g, "plant care app",
+    /\bcomputers\b/g, "plant care apps"
 ];
 
 // eof
