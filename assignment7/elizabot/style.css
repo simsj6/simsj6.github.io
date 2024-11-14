@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+html{
+    scrollbar-width: none;
+}
+
+body{
+    background-image: linear-gradient(#f59bd166, #f59bd166), url(/images/plants.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #fff;
+    font-family: "Afacad Flux", sans-serif;
+}
+
+h1{
+    text-shadow: #3d1c2a 0 5px 5px;
+    transition: translate 0.5s;
+}
+
+h1:hover{
+    translate: 0 -5px;
+    transition: translate 0.5s;
+}
+
+table{
+    background-color: #f59bd166;
+    border-radius: 10px;
+}
+
+textarea{
+    font-family: "Afacad Flux", sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+tr, td{
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+}
+
+.main-area{
+    padding: 5px;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: medium;
+}
+
+.main-area:focus{
+    outline: 0;
+    border-color: transparent;
+}
+
+.text{
+    font-family: "Afacad Flux", sans-serif;
+    border-radius: 3px;
+    border-color: transparent;
+    transition: border-color 0.3s;
+    line-height: 1.5em;
+    font-size: medium;
+    width: 80%;
+}
+
+.text:focus{
+    border-color: #3d1c2a;
+    box-shadow: #3d1c2a 0 0 5px;
+    outline: 0;
+    transition: border-color 0.3s;
+}
+
+.button{
+    font-family: "Afacad Flux", sans-serif;
+    border-color: #4c2435;
+    box-shadow: #3d1c2a 0 0 5px;
+    color: #fff;
+    background-color: #3d1c2ade;
+    border-radius: 3px;
+    font-size: medium;
+    margin-left: 10px;
+}
