@@ -57,6 +57,10 @@ tr, td{
     border-color: transparent;
 }
 
+.main-area:hover{
+    cursor: default;
+}
+
 .text{
     font-family: "Afacad Flux", sans-serif;
     border-radius: 3px;

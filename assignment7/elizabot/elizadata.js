@@ -3,19 +3,19 @@
 // [cf: Communications of the ACM, Vol. 9, #1 (January 1966): p 36-45.]
 
 var elizaInitials = [
-"How do you do.  Please tell me your problem.",
+"Hey! Let's chat about plants.",
 // additions (not original)
-"Please tell me what's been bothering you.",
-"Is something troubling you ?"
+"What's your favorite plant?",
+"How are your plants doing?"
 ];
 
 var elizaFinals = [
-"Goodbye.  It was nice talking to you.",
+"See you! It was nice talking to you.",
 // additions (not original)
-"Goodbye.  This was really a nice talk.",
-"Goodbye.  I'm looking forward to our next session.",
-"This was a good session, wasn't it -- but time is over now.   Goodbye.",
-"Maybe we could discuss this moreover in our next session ?   Goodbye."
+"Have a nice day!",
+"Be kind to plants :)",
+"Talk to you later!",
+"Bring a plant next time!"
 ];
 
 var elizaQuits = [
@@ -23,7 +23,8 @@ var elizaQuits = [
 "goodbye",
 "done",
 "exit",
-"quit"
+"quit",
+"good bye"
 ];
 
 var elizaPres = [
