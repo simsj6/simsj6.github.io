@@ -7,56 +7,59 @@ var elizaInitials = [
     "Hi there! Tell me what you need help with in your garden.",
     "How can I assist you in taking care of your plants today?"
 ];
-  
+
 var elizaFinals = [
-    "Goodbye! I hope your plants thrive.",
+    "Anytime! I hope your plants thrive.",
     "It was a pleasure helping you with your garden. Take care!",
     "I look forward to assisting you with your plants again. Goodbye!",
     "Time to water your plants! Goodbye for now.",
     "Keep your garden healthy! Until next time!"
 ];
-  
+
 
 var elizaQuits = [
-"bye",
-"goodbye",
-"done",
-"exit",
-"quit",
-"good bye"
+    "bye",
+    "goodbye",
+    "done",
+    "exit",
+    "quit",
+    "good bye",
+    "thanks",
+    "thank you",
+    "no"
 ];
 
 var elizaPres = [
-"dont", "don't",
-"cant", "can't",
-"wont", "won't",
-"recollect", "remember",
-"recall", "remember",
-"dreamt", "dreamed",
-"dreams", "dream",
-"maybe", "perhaps",
-"certainly", "yes",
-"machine", "computer",
-"machines", "computer",
-"computers", "computer",
-"were", "was",
-"you're", "you are",
-"i'm", "i am",
-"same", "alike",
-"identical", "alike",
-"equivalent", "alike"
+    "dont", "don't",
+    "cant", "can't",
+    "wont", "won't",
+    "recollect", "remember",
+    "recall", "remember",
+    "dreamt", "dreamed",
+    "dreams", "dream",
+    "maybe", "perhaps",
+    "certainly", "yes",
+    "machine", "computer",
+    "machines", "computer",
+    "computers", "computer",
+    "were", "was",
+    "you're", "you are",
+    "i'm", "i am",
+    "same", "alike",
+    "identical", "alike",
+    "equivalent", "alike"
 ];
 
 var elizaPosts = [
-"am", "are",
-"your", "my",
-"me", "you",
-"myself", "yourself",
-"yourself", "myself",
-"i", "you",
-"you", "I",
-"my", "your",
-"i'm", "you are"
+    "am", "are",
+    "your", "my",
+    "me", "you",
+    "myself", "yourself",
+    "yourself", "myself",
+    "i", "you",
+    "you", "I",
+    "my", "your",
+    "i'm", "you are"
 ];
 
 var elizaSynons = {
@@ -67,305 +70,378 @@ var elizaSynons = {
     "healthy": ["strong", "vibrant", "lush", "growing well"],
     "dead": ["dying", "withering", "wilting"],
     "growth": ["bloom", "growth", "flowering", "sprouting"],
-    "care": ["tend to", "look after", "manage", "cultivate"]
-};  
+    "care": ["tend to", "look after", "manage", "cultivate"],
+    "pest": ["pests"],
+    "houseplant": ["house plant", "houseplants", "house plants"]
+};
 
 var elizaKeywords = [
     ["xnone", 0, [
         ["*", [
-            "I'm not sure I understand. Could you tell me more about your plants?",
-            "Please tell me more about your garden.",
-            "What plants are you focusing on?",
-            "Tell me about your gardening experience."
+            "To improve your plant care, make sure to monitor water levels and adjust for each plant's specific needs.",
+            "Regularly check for pests and diseases to keep your plants healthy.",
+            "Provide a suitable environment for each plant, considering its light and temperature preferences.",
+            "Be patient with your plants – growth takes time, but with consistent care, they'll thrive."
         ]]
     ]],
     ["watering", 5, [
         ["* watering *", [
-            "How often do you water your plants?",
-            "Are your plants getting enough water?",
-            "Do you use a specific watering method?",
-            "What kind of plants are you watering?",
-            "Do you water them thoroughly or just a little at a time?",
-            "What’s your method for watering your plants?",
-            "Are you using any self-watering techniques?"
-        ]],
+            "Deeply water your plants, allowing water to reach their roots. Most plants prefer infrequent, thorough watering to shallow, frequent watering.",
+            "Check the moisture level of the soil by sticking your finger into it. If the soil is dry an inch down, it’s time to water.",
+            "Consider using self-watering techniques or watering systems to make your plant care routine easier."
+        ]]
+    ]],
+    ["how often do you water", 5, [
         ["* how often do you water *", [
-            "How often do you typically water your plants?",
-            "What’s your watering schedule like for your garden?",
-            "I recommend watering most plants every 1-2 weeks, depending on the type."
-        ]],
+            "Water your plants when the top inch of soil feels dry. The frequency will depend on the type of plant and the environment.",
+            "Succulents need water less often than tropical plants. Be mindful of their specific needs to avoid overwatering."
+        ]]
+    ]],
+    ["do you water", 5, [
         ["* do you water *", [
-            "Do you water them thoroughly or just a little at a time?",
-            "What’s your method for watering your plants?",
-            "Are you using any self-watering techniques?"
-        ]],
+            "Water thoroughly, ensuring that the water reaches the root zone. Don't just moisten the surface of the soil.",
+            "If your plants are in containers, make sure there is drainage to prevent waterlogging and root rot."
+        ]]
+    ]],
+    ["dry", 5, [
         ["* dry *", [
-            "Is the soil in your garden drying out too quickly?",
-            "If your soil dries out fast, have you thought about mulching?",
-            "How do you keep the moisture in the soil during hot weather?",
-            "Dry soil can stress plants. Do you have any strategies to retain moisture?"
-        ]],
+            "If your soil is drying out too quickly, try adding mulch around your plants to help retain moisture.",
+            "Consider using a heavier soil mix or adding moisture-retaining ingredients like peat moss to help your plants stay hydrated longer."
+        ]]
+    ]],
+    ["moist", 5, [
         ["* moist *", [
-            "Moist soil is ideal for many plants. Are you achieving that balance?",
-            "Do you check the moisture level before watering?",
-            "Plants like ferns and tropical houseplants need moist environments. How do you manage that?"
-        ]],
+            "Maintain a consistent moisture level, especially for plants that prefer humid environments like ferns and tropicals.",
+            "Check your plants regularly to ensure they aren’t drying out or staying too soggy – both extremes can be harmful."
+        ]]
+    ]],
+    ["soggy soil", 5, [
         ["* soggy soil *", [
-            "Soggy soil could indicate that you are overwatering or that the plant's pot isn't draining properly.",
-            "How often are you watering your plant? Sometimes letting the soil dry out completely between waterings helps prevent overwatering."
+            "If the soil is consistently soggy, reduce watering and ensure your plant's pot has good drainage.",
+            "Overwatering is a common cause of root rot. Let the soil dry out slightly before watering again."
         ]]
     ]],
     ["sunlight", 5, [
         ["* sunlight *", [
-            "Do your plants get enough sunlight?",
-            "What direction does your garden face for sunlight?",
-            "Are you growing plants that need full sunlight or partial shade?",
-            "Is your plant getting enough light?",
-            "Some plants need direct sunlight, others prefer indirect light. What does your plant require?",
-            "Do you have a grow light for your indoor plants?",
-            "Are you considering moving your plant to a brighter location?"
-        ]],
+            "Ensure your plants receive the right amount of sunlight. Many houseplants thrive in bright, indirect light, while succulents prefer direct sunlight.",
+            "If your plants seem to be stretching toward the light, they may need more exposure. Consider moving them to a brighter location."
+        ]]
+    ]],
+    ["sun", 5, [
         ["* sun *", [
-            "Does your plant get full sun or partial shade?",
-            "Tomatoes, peppers, and basil love full sunlight. Are they in the right spot?",
-            "Do you move your indoor plants around to catch more sunlight?",
-            "Are you using any special lighting for your plants during the winter months?"
+            "Monitor the amount of sunlight your plants receive. Some need full sun to thrive, while others, like ferns, prefer partial shade.",
+            "If you grow houseplants, try rotating them periodically to ensure even exposure to light."
         ]]
     ]],
     ["soil", 5, [
         ["* soil *", [
-            "What type of soil are you using for your plants?",
-            "Is your soil well-draining?",
-            "Do you amend your soil with compost or other organic material?",
-            "Soil pH is important for plant health. Have you checked yours recently?",
-            "Do you use a specific type of soil for different kinds of plants?"
-        ]],
+            "Choose the right soil for your plants. Most houseplants do well in a well-draining, all-purpose potting mix.",
+            "Add organic matter or compost to your soil to improve drainage and provide your plants with necessary nutrients."
+        ]]
+    ]],
+    ["fertilizer", 5, [
         ["* fertilizer *", [
-            "Do you use fertilizer for your houseplants or garden plants?",
-            "How often do you fertilize your plants?",
-            "Are you using organic or synthetic fertilizer?",
-            "Different plants require different types of fertilizer. Have you researched the best for yours?"
+            "Fertilize your plants regularly, especially during the growing season, to encourage healthy growth.",
+            "Opt for organic or slow-release fertilizers to avoid overfeeding and nutrient burn. Always follow the manufacturer's instructions."
         ]]
     ]],
     ["plants", 5, [
         ["* plants *", [
-            "What kind of plants are you growing?",
-            "Are you growing indoor or outdoor plants?",
-            "What types of plants need attention in your garden right now?",
-            "Tell me more about your plants."
-        ]],
-        ["* do you have * plants", [
-            "I am just a bot, but I know a lot about plants. What types are you interested in?",
-            "What plants do you have in your garden right now?"
+            "Provide appropriate care for each type of plant, as their needs can vary widely based on the species.",
+            "Regularly check for pests, trim dead leaves, and adjust your watering and sunlight based on the plant’s specific needs."
+        ]]
+    ]],
+    ["do you have plants", 5, [
+        ["* do you have plants", [
+            "Each plant has unique care needs, so it's important to research the specific care for each variety in your collection.",
+            "For healthy plants, make sure each one has its own space to grow, adequate light, and appropriate watering conditions."
         ]]
     ]],
     ["succulents", 5, [
         ["* succulents *", [
-            "Succulents are great low-maintenance plants! Do you know how to care for them?",
-            "Do you water your succulents differently from other plants?",
-            "What kinds of succulents are you growing?"
+            "Succulents need plenty of sunlight and well-draining soil to thrive. Consider using cactus mix soil for best results.",
+            "Water your succulents sparingly, allowing the soil to dry out completely between waterings. They’re drought-tolerant and don't require frequent watering."
         ]]
     ]],
     ["herbs", 5, [
         ["* herbs *", [
-            "What herbs do you have in your garden?",
-            "Herbs like basil and thyme can be great for cooking. Do you use yours for cooking?",
-            "How do you care for your herb plants?"
+            "Herbs like basil and thyme need plenty of sunlight and a well-draining, slightly alkaline soil. Regularly prune them to encourage growth.",
+            "Water your herbs deeply but infrequently, ensuring the soil dries out slightly between waterings. Herbs don’t like to be waterlogged."
         ]]
     ]],
     ["container", 0, [
         ["* container *", [
-            "Are you growing plants in containers or raised beds?",
-            "How are your container plants doing?",
-            "Container gardening can be very rewarding. Do you find it easy to manage?"
+            "Choose the right-sized container for your plants. A pot that’s too small can stunt growth, while one that's too large can lead to overwatering.",
+            "For container plants, ensure that your pots have good drainage holes to prevent water from collecting at the bottom and causing root rot."
         ]]
     ]],
     ["pruning", 0, [
         ["* pruning *", [
-            "Have you pruned your plants recently?",
-            "When was the last time you pruned your plants for better growth?",
-            "What type of pruning method do you prefer for your plants?"
+            "Regular pruning helps maintain plant shape and health by removing dead or damaged stems.",
+            "Use sharp, clean scissors or pruning shears to avoid damaging your plants. Prune during the growing season to encourage fresh growth.",
+            "Regular pruning encourages healthy growth by removing dead or damaged parts. It can also help shape your plant.",
+            "Trim back leggy or overgrown stems to encourage bushier growth. Pruning after flowering can also promote future blooms.",
+            "Pruning helps to shape your plant and remove dead or diseased growth. Regular pruning encourages new growth, increases air circulation, and can prevent pests and diseases. Always use clean, sharp pruning shears to avoid damage."
         ]]
     ]],
     ["houseplant", 10, [
         ["* houseplant *", [
-            "Do you enjoy caring for your houseplants?",
-            "How often do you water your houseplants?",
-            "What type of houseplant are you currently taking care of?",
-            "What is your favorite houseplant?",
-            "Is your houseplant thriving or struggling?",
-            "What kind of lighting does your houseplant prefer?"
-        ]],
+            "Keep your houseplants in a well-lit area with plenty of indirect sunlight. Rotate them periodically to ensure even light exposure.",
+            "Houseplants need regular watering, but ensure the soil dries out between waterings to prevent root rot. Avoid letting water sit in the saucer."
+        ]]
+    ]],
+    ["succulent", 5, [
         ["* succulent *", [
-            "Do you know the specific needs of your succulents?",
-            "Succulents are low-maintenance plants. How often do you water them?",
-            "What type of succulent do you have in your collection?",
-            "Are your succulents getting enough sunlight?",
-            "What do you like most about succulents?"
-        ]],
+            "Succulents thrive in bright, direct sunlight. Make sure to water them sparingly, allowing the soil to dry completely between waterings.",
+            "A well-draining potting mix is essential for succulents to prevent root rot. Choose a cactus or succulent soil blend."
+        ]]
+    ]],
+    ["fern", 5, [
         ["* fern *", [
-            "Ferns love humidity. How do you keep the air moist for your ferns?",
-            "Do you have a favorite type of fern?",
-            "Ferns prefer indirect sunlight. Do you place them near a window?",
-            "How often do you water your ferns?"
-        ]],
+            "Ferns prefer a humid environment. To increase humidity, mist the leaves or place a humidifier near them.",
+            "Keep ferns in a spot with indirect light. Direct sunlight can scorch their delicate fronds."
+        ]]
+    ]],
+    ["cactus", 5, [
         ["* cactus *", [
-            "Cacti need very little water. How often do you water yours?",
-            "Are you keeping your cactus in a sunny spot?",
-            "Do you have trouble with overwatering your cactus?",
-            "Cacti like dry, well-drained soil. Does your cactus thrive in it?"
+            "Cacti need bright, direct sunlight and infrequent watering. Let the soil dry out completely before watering again.",
+            "Ensure your cactus is planted in well-draining soil to prevent root rot. Water less frequently in the winter months when they’re dormant."
         ]]
     ]],
     ["growth", 5, [
         ["* growth *", [
-            "How is the growth of your plants progressing?",
-            "Is your plant growing as expected?",
-            "Are you noticing any signs of slow growth?",
-            "What steps have you taken to promote healthy plant growth?"
-        ]],
+            "Healthy plant growth requires consistent care, including appropriate watering, sunlight, and nutrition. Be patient and provide a stable environment.",
+            "If your plant’s growth slows down, try increasing the amount of light or adjusting your watering routine."
+        ]]
+    ]],
+    ["bloom", 5, [
         ["* bloom *", [
-            "Is your plant blooming yet?",
-            "What kind of flowers are you hoping to see on your plant?",
-            "Some plants need special care to bloom. Have you researched what your plant requires?"
-        ]],
-        ["* pruning *", [
-            "Pruning helps with growth. Do you regularly prune your plants?",
-            "Are you familiar with the best time to prune your plant?",
-            "What parts of the plant do you prune to encourage more growth?"
+            "Many plants need additional care to bloom, such as proper lighting, pruning, and occasionally a fertilizer boost.",
+            "If your plant isn’t blooming, check for the right light conditions and consider using a bloom-boosting fertilizer."
         ]]
     ]],
     ["pest", 5, [
         ["* pest *", [
-            "Are you dealing with any pests in your garden?",
-            "What kind of pests are bothering your plants?",
-            "Do you use any natural remedies to keep pests away from your plants?",
-            "Have you tried any organic pest control methods?"
-        ]],
+            "Keep an eye out for pests like aphids, spider mites, and mealybugs. You can remove them by wiping leaves with soapy water or using neem oil.",
+            "For serious infestations, consider using organic insecticides or introducing beneficial insects like ladybugs to your garden."
+        ]]
+    ]],
+    ["aphid", 5, [
         ["* aphid *", [
-            "Aphids can be a nuisance. Are they affecting your plants?",
-            "Have you considered using neem oil to get rid of aphids?",
-            "Aphids like to feed on tender new growth. How is your plant doing?",
-            "Are you treating your plants for aphids regularly?"
-        ]],
+            "Aphids can be removed by spraying plants with a mixture of water and mild soap, or using neem oil to kill them naturally.",
+            "Regularly inspect the undersides of leaves where aphids tend to hide. Wipe down leaves with a damp cloth to remove any pests.",
+            "Aphids are small insects that suck sap from your plants. You can remove them by spraying your plants with a mixture of soapy water or neem oil. A strong stream of water from a hose can also help dislodge them."
+        ]]
+    ]],
+    ["spider mite", 5, [
         ["* spider mite *", [
-            "Spider mites can be tricky. Are you noticing webbing on your plants?",
-            "How do you manage spider mites in your garden?",
-            "Have you tried spraying your plants with a mild soap solution to get rid of spider mites?"
-        ]],
+            "Spider mites can be controlled by spraying your plants with water or insecticidal soap. Boost humidity to make the environment less favorable for them.",
+            "Check the undersides of leaves for fine webbing, a common sign of spider mites. Remove infested leaves if necessary."
+        ]]
+    ]],
+    ["mealybug", 5, [
         ["* mealybug *", [
-            "Mealybugs are white, cotton-like pests that can attack the leaves and stems. Are you seeing any white fuzz on your plant?",
-            "Mealybugs can be removed with a cotton swab dipped in rubbing alcohol or insecticidal soap."
+            "Mealybugs can be wiped off with a cotton swab dipped in rubbing alcohol or insecticidal soap.",
+            "To prevent mealybug infestations, check your plants regularly, especially in hidden spots like leaf axils and stems."
         ]]
     ]],
-    ["dyingplant", 10, [
+    ["dying", 10, [
         ["* dying *", [
-            "It sounds like your plant might be struggling. What symptoms are you noticing?",
-            "What type of plant is it? Some plants have specific care needs.",
-            "Are the leaves turning yellow or brown? That could indicate a problem.",
-            "What kind of environment is your plant in? It may need changes in watering or sunlight."
-        ]],
-        ["* wilting *", [
-            "Wilting can be a sign of too little or too much water. Have you checked your watering schedule?",
-            "What’s the soil like? Is it too dry or too soggy?"
-        ]],
-        ["* yellow leaves *", [
-            "Yellow leaves might indicate overwatering or a nutrient deficiency. Have you checked your plant’s soil?"
-        ]],
-        ["* brown tips *", [
-            "Brown tips on leaves are often caused by low humidity or over-fertilizing. Could one of these be the issue?"
+            "If your plant is struggling, adjust watering and check the light conditions. Sometimes they need more light or less water.",
+            "Remove any dead or yellowing leaves to help your plant conserve energy for new growth."
         ]]
     ]],
-    ["watering", 5, [
-        ["* watering *", [
-            "Proper watering is essential for plant health. Most plants prefer deep, infrequent watering rather than frequent shallow watering. Are you allowing the soil to dry out between waterings?",
-            "It’s important to water your plants thoroughly so that the water reaches the roots. You can check if they need water by sticking your finger in the soil. If it feels dry an inch down, it’s time to water!"
-        ]],
-        ["* how often * water *", [
-            "The frequency of watering depends on the type of plant and the environment. In general, water when the top inch of soil feels dry. Some plants like cacti only need watering every couple of weeks, while others like ferns need moisture more often."
-        ]],
-        ["* overwatering *", [
-            "Overwatering can lead to root rot. Make sure your plant’s pot has drainage holes, and only water when the top inch of soil feels dry. Are you seeing yellowing leaves or mushy stems? These are signs of overwatering."
-        ]],
+    ["dead", 5, [
+        ["* dead *", [
+            "Cut away any dead or decaying parts of the plant to prevent them from affecting healthy growth.",
+            "If the whole plant seems to be dying, check the roots for rot. Trim any affected areas and repot in fresh soil if necessary."
+        ]]
+    ]],
+    ["wilt", 5, [
+        ["* wilt *", [
+            "Wilted leaves may indicate underwatering or overwatering. Check the soil moisture level and adjust accordingly.",
+            "If the soil is dry, give your plant a thorough watering. If the soil is soggy, allow it to dry out before watering again."
+        ]]
+    ]],
+    ["root rot", 5, [
+        ["* root rot *", [
+            "Root rot occurs when plant roots become waterlogged, causing them to decay. If your plant is showing signs of root rot, you may need to trim away the affected roots and repot it in fresh, well-draining soil."
+        ]]
+    ]],
+    // Watering & Frequency
+    ["watering schedule", 5, [
+        ["* watering schedule *", [
+            "Establishing a consistent watering schedule is key for plant health. Most plants prefer to dry out slightly between waterings. Water deeply when the top inch of soil feels dry, but avoid overwatering as it can cause root rot."
+        ]]
+    ]],
+    ["how often should I water", 5, [
+        ["* how often should I water *", [
+            "The watering frequency depends on the type of plant and the environment. In general, water when the top inch of soil feels dry. Some plants like succulents need less water, while tropical plants may need more."
+        ]]
+    ]],
+    ["dry soil", 5, [
         ["* dry soil *", [
-            "If the soil in your pot is drying out too quickly, it may be a sign that your plant needs more frequent watering or that the soil is too sandy. Try using a heavier, moisture-retaining mix if your plant needs more water."
+            "If the soil is drying out too quickly, it may be a sign that you need to water your plant more frequently or that the potting mix isn't holding moisture well. Consider switching to a moisture-retaining soil mix."
         ]]
     ]],
-    ["sunlight", 5, [
-        ["* sunlight *", [
-            "Most plants need plenty of natural light to thrive, but the amount and intensity of light they require can vary. For example, succulents prefer bright, direct sunlight, while ferns thrive in low to medium indirect light. What kind of plant are you caring for?"
-        ]],
-        ["* how much light *", [
-            "If you're unsure whether your plant is getting enough light, you can look for signs like leggy growth, small leaves, or leaning toward the light. These are signs your plant may need more light. Consider moving it to a brighter spot!"
-        ]],
-        ["* shade *", [
-            "Some plants, like ferns or peace lilies, prefer low to medium light and can do well in shaded spots. However, even shade-loving plants need a bit of indirect sunlight to stay healthy."
-        ]],
-        ["* bright light *", [
-            "If your plant needs bright light, it’s best to place it near a south-facing window, where it will get the most exposure to direct sunlight. Be mindful that too much direct sunlight can scorch delicate leaves, so a spot with bright, indirect light is often ideal."
+    ["overwatering", 5, [
+        ["* overwatering *", [
+            "Overwatering can lead to root rot. Make sure your pots have drainage holes and allow the soil to dry out between waterings. If you notice yellowing leaves or mushy stems, reduce watering immediately."
         ]]
     ]],
-    ["soil", 5, [
-        ["* soil *", [
-            "Good soil is key to plant health. Most plants prefer well-draining soil with plenty of organic matter. Are you using a special mix for your plant, like cactus soil or a general-purpose potting mix?"
-        ]],
-        ["* compost *", [
-            "Composting is a great way to improve soil fertility. Mixing compost into your soil can add nutrients and improve its structure, making it better at retaining moisture while still draining well. Consider adding compost or other organic material to your potting mix!"
-        ]],
-        ["* fertilizing *", [
-            "Fertilizing is important for plant health, but it’s easy to overdo it. Use a balanced, water-soluble fertilizer for most plants, applying it once a month during the growing season. Always follow the instructions to avoid nutrient burn."
-        ]],
-        ["* soil pH *", [
-            "Soil pH can affect your plant's nutrient absorption. Some plants prefer acidic soil (like blueberries), while others like alkaline conditions (such as lilacs). You can test your soil’s pH with a simple testing kit and adjust it if necessary."
-        ]],
-        ["* soil drainage *", [
-            "Good drainage is crucial for healthy roots. Make sure your pot has drainage holes, and avoid using a heavy, clay-based soil for plants that require good airflow to their roots. For better drainage, mix in perlite or coarse sand."
+    ["how to check water needs", 5, [
+        ["* how to check water needs *", [
+            "The best way to check if your plant needs water is by sticking your finger into the soil. If it feels dry an inch down, it’s time to water. Otherwise, wait a bit longer to avoid overwatering."
         ]]
     ]],
-    ["temperature", 5, [
-        ["* temperature *", [
-            "Most plants prefer moderate temperatures between 60–75°F (15–24°C). Extreme heat or cold can cause stress. Is your plant near a drafty window or a heater? Temperature fluctuations can affect plant health."
-        ]],
-        ["* humidity *", [
-            "Many houseplants, like ferns and orchids, thrive in high humidity. You can increase humidity by placing a tray of water near your plants, grouping plants together, or using a humidifier."
-        ]],
-        ["* cold *", [
-            "Cold drafts can harm plants, especially tropical ones. Keep your plants away from windows during winter or from cold air vents. If your plant is exposed to too much cold, you might notice yellowing or wilting."
-        ]],
-        ["* heat *", [
-            "In hot weather, plants can dry out quickly. Make sure to water your plants more frequently during the summer, and avoid placing them in direct sunlight during the hottest part of the day, as the heat can scorch the leaves."
-        ]],
-        ["* air circulation *", [
-            "Good air circulation helps prevent fungal infections and encourages healthy plant growth. Avoid overcrowding plants and make sure air can flow around them, especially in humid environments."
+
+    // Light & Positioning
+    ["lighting", 5, [
+        ["* lighting *", [
+            "Most plants thrive with bright, indirect light. Place your plants near windows with sheer curtains to protect them from harsh sunlight, or in areas with good natural light. Avoid direct afternoon sunlight, which can scorch delicate leaves."
         ]]
     ]],
-    ["pruning", 5, [
-        ["* pruning *", [
-            "Pruning helps promote healthy growth by removing dead or diseased stems and leaves. Be sure to use clean, sharp scissors or pruning shears to avoid damaging your plant. What part of your plant do you think needs pruning?"
-        ]],
-        ["* deadheading *", [
-            "Deadheading is the practice of removing spent flowers. This encourages new blooms and helps keep the plant looking tidy. Try cutting off the flowers just above the next set of leaves to promote further growth."
-        ]],
+    ["sun exposure", 5, [
+        ["* sun exposure *", [
+            "Some plants, like succulents and tomatoes, prefer full sun, while others, like ferns or peace lilies, do better in low to medium light. Make sure you know your plant's specific light requirements to keep it thriving."
+        ]]
+    ]],
+    ["indoor lighting", 5, [
+        ["* indoor lighting *", [
+            "If you're growing plants indoors, consider investing in grow lights, especially during winter months when natural light can be scarce. LED grow lights provide the spectrum of light plants need for healthy growth."
+        ]]
+    ]],
+    ["shade-loving plants", 5, [
+        ["* shade-loving plants *", [
+            "Plants like ferns, calatheas, and peace lilies thrive in low light conditions. While they don’t need direct sunlight, they still need some ambient light, so avoid dark corners where light is limited."
+        ]]
+    ]],
+    ["moving plants", 5, [
+        ["* moving plants *", [
+            "If your plant isn’t thriving, try adjusting its location. Moving it closer to a light source or further from direct sunlight may help boost its health."
+        ]]
+    ]],
+
+    // Soil & Fertilization
+    ["soil quality", 5, [
+        ["* soil quality *", [
+            "Healthy plants need healthy soil. Most plants prefer well-draining soil that is rich in organic matter. If your soil doesn’t drain well, consider adding perlite or sand to improve drainage."
+        ]]
+    ]],
+    ["repotting", 5, [
         ["* repotting *", [
-            "If your plant’s roots are outgrowing their pot, it’s time to repot. Choose a pot that’s 1–2 inches larger in diameter than the current one and refresh the soil with a new potting mix to give your plant more room to grow."
-        ]],
-        ["* cutting back *", [
-            "Cutting back encourages bushier growth, especially for plants like fuchsias and geraniums. Trim back leggy stems in early spring to promote a fuller plant."
+            "Repotting your plant every 1-2 years can help refresh the soil and provide more room for root growth. Choose a pot that’s 1-2 inches larger than the current one, and replace the old soil with fresh, nutrient-rich mix."
         ]]
     ]],
-    ["troubleshooting", 5, [
-        ["* yellow leaves *", [
-            "Yellow leaves can indicate overwatering, nutrient deficiencies, or poor lighting. Are you watering too frequently? Have you checked if your plant is getting enough light?"
-        ]],
-        ["* wilting *", [
-            "Wilting can be caused by underwatering or overwatering. Check the soil to see if it’s too dry or too soggy. If the soil is dry, water your plant thoroughly. If it’s soggy, reduce watering and improve drainage."
-        ]],
-        ["* pests *", [
-            "Are you dealing with pests? Aphids, spider mites, and mealybugs are common offenders. You can gently wipe your plant’s leaves with soapy water or use neem oil to treat them."
-        ]],
-        ["* disease *", [
-            "Fungal diseases can affect plants, especially in humid environments. Make sure your plant has good air circulation and avoid overhead watering, which can spread spores."
+    ["fertilizing", 5, [
+        ["* fertilizing *", [
+            "Fertilize your plants regularly to encourage healthy growth. Use a balanced, water-soluble fertilizer during the growing season (spring and summer) and reduce feeding in fall and winter when plant growth slows."
         ]]
-    ]]                        
+    ]],
+    ["composting", 5, [
+        ["* composting *", [
+            "Composting is a great way to naturally fertilize your plants. Mix compost into your soil to improve its nutrient content and structure, which helps retain moisture and promotes strong root growth."
+        ]]
+    ]],
+    ["pH of soil", 5, [
+        ["* pH of soil *", [
+            "Soil pH affects nutrient absorption. Some plants, like blueberries, prefer acidic soil, while others, like lilacs, thrive in alkaline soil. You can test your soil’s pH using a simple kit and adjust it if needed by adding lime (for alkaline soil) or sulfur (for acidic soil)."
+        ]]
+    ]],
+
+    // Pruning & Maintenance
+    ["deadheading", 5, [
+        ["* deadheading *", [
+            "Deadheading, or removing spent flowers, encourages plants to focus energy on producing more blooms instead of seeds. Remove the flower stalks at the base, just above the first set of leaves, to promote further flowering."
+        ]]
+    ]],
+    ["trimming", 5, [
+        ["* trimming *", [
+            "Trimming your plant’s leggy stems or overgrown branches can help it stay compact and healthy. If you’re growing a vine or trailing plant, trim back the long stems to maintain its shape and encourage fuller growth."
+        ]]
+    ]],
+    ["yellow leaves", 5, [
+        ["* yellow leaves *", [
+            "If you notice yellowing leaves, it’s a sign your plant may be overwatered or stressed. Removing the yellow leaves can help the plant focus its energy on healthy growth.",
+            "Yellowing leaves can be a sign of overwatering or nutrient deficiencies. Have you been watering regularly?",
+            "Is the plant getting enough sunlight? Sometimes too little light causes leaves to yellow.",
+            "Check the roots. Yellow leaves might indicate root rot or a need for repotting."
+        ]]
+    ]],
+    ["brown leaves", 5, [
+        ["* brown leaves *", [
+            "Brown leaves can be caused by a few things. Is the plant getting enough water?",
+            "If the edges of the leaves are turning brown, it might be a sign of overwatering or underwatering.",
+            "Are the brown spots on the leaves dry and crispy, or are they soft and mushy?",
+            "It could also be a sign of too much direct sunlight or nutrient deficiencies."
+        ]]
+    ]],
+    ["cutting back", 5, [
+        ["* cutting back *", [
+            "For plants like fuchsias or geraniums, cutting back stems during early spring promotes bushier, more vigorous growth. Trim back 1/3 of the plant to encourage new shoots and fuller foliage."
+        ]]
+    ]],
+
+    // Pest Control
+    ["spider mites", 5, [
+        ["* spider mites *", [
+            "Spider mites are tiny pests that thrive in dry conditions. They can be controlled by misting your plant regularly to maintain humidity or by wiping leaves with a damp cloth. Neem oil is also effective against spider mites."
+        ]]
+    ]],
+    ["mealybugs", 5, [
+        ["* mealybugs *", [
+            "Mealybugs appear as white, cotton-like clusters on the leaves and stems. Remove them by wiping them off with a cotton swab dipped in rubbing alcohol or by spraying the plant with insecticidal soap."
+        ]]
+    ]],
+    ["slugs and snails", 5, [
+        ["* slugs and snails *", [
+            "Slugs and snails can damage your plants by eating holes in the leaves. Place beer traps or diatomaceous earth around your plants to prevent them from feasting on your garden."
+        ]]
+    ]],
+    ["general pest prevention", 5, [
+        ["* general pest prevention *", [
+            "Regularly inspect your plants for signs of pests like discolored spots, webs, or holes in the leaves. Quarantining new plants for a few weeks before introducing them to your garden can help prevent pest infestations."
+        ]]
+    ]],
+
+    // Temperature & Humidity
+    ["temperature range", 5, [
+        ["* temperature range *", [
+            "Most houseplants prefer temperatures between 60°F–75°F (15°C–24°C). Keep plants away from heat sources or cold drafts, as extreme temperatures can stress them and hinder growth."
+        ]]
+    ]],
+    ["humidity", 5, [
+        ["* humidity *", [
+            "Many plants, especially tropical species like ferns and orchids, thrive in high humidity. Increase humidity by grouping plants together, placing them on a humidity tray, or using a humidifier."
+        ]]
+    ]],
+    ["temperature fluctuation", 5, [
+        ["* temperature fluctuation *", [
+            "Sudden temperature changes, such as placing plants near air conditioning vents or radiators, can stress them. Try to keep your plants in a stable environment, away from temperature extremes."
+        ]]
+    ]],
+    ["cold damage", 5, [
+        ["* cold damage *", [
+            "Cold temperatures can damage delicate plants. Keep plants away from drafty windows or doors in winter. If your plant has been exposed to cold, check for signs like yellowing leaves or wilting."
+        ]]
+    ]],
+    ["winter care", 5, [
+        ["* winter care *", [
+            "In winter, reduce watering as most plants' growth slows down. Keep plants near a light source but avoid direct exposure to heating sources that may dry them out."
+        ]]
+    ]],
+    ["rootbound", 5, [
+        ["* rootbound *", [
+            "Is your plant rootbound? You can tell if roots are growing out of the drainage holes or if they’re circling the bottom of the pot.",
+            "If your plant is rootbound, it might not be able to take up enough water or nutrients. Repotting it into a larger container might help."
+        ]]
+    ]],
+    ["pot", 5, [
+        ["* pot *", [
+            "Have you checked to see if your plant needs a bigger pot? Sometimes plants stop growing because their roots run out of space.",
+            "Repotting a rootbound plant can give it a fresh start and room to grow. What size pot are you using?"
+        ]],
+    ]]
 ];
 
 
