@@ -79,26 +79,72 @@ var elizaKeywords = [
             "Tell me about your gardening experience."
         ]]
     ]],
-    ["watering", 0, [
+    ["watering", 5, [
         ["* watering *", [
             "How often do you water your plants?",
             "Are your plants getting enough water?",
             "Do you use a specific watering method?",
-            "What kind of plants are you watering?"
+            "What kind of plants are you watering?",
+            "Do you water them thoroughly or just a little at a time?",
+            "What’s your method for watering your plants?",
+            "Are you using any self-watering techniques?"
+        ]],
+        ["* how often do you water *", [
+            "How often do you typically water your plants?",
+            "What’s your watering schedule like for your garden?",
+            "I recommend watering most plants every 1-2 weeks, depending on the type."
+        ]],
+        ["* do you water *", [
+            "Do you water them thoroughly or just a little at a time?",
+            "What’s your method for watering your plants?",
+            "Are you using any self-watering techniques?"
+        ]],
+        ["* dry *", [
+            "Is the soil in your garden drying out too quickly?",
+            "If your soil dries out fast, have you thought about mulching?",
+            "How do you keep the moisture in the soil during hot weather?",
+            "Dry soil can stress plants. Do you have any strategies to retain moisture?"
+        ]],
+        ["* moist *", [
+            "Moist soil is ideal for many plants. Are you achieving that balance?",
+            "Do you check the moisture level before watering?",
+            "Plants like ferns and tropical houseplants need moist environments. How do you manage that?"
+        ]],
+        ["* soggy soil *", [
+            "Soggy soil could indicate that you are overwatering or that the plant's pot isn't draining properly.",
+            "How often are you watering your plant? Sometimes letting the soil dry out completely between waterings helps prevent overwatering."
         ]]
     ]],
-    ["sunlight", 0, [
+    ["sunlight", 5, [
         ["* sunlight *", [
             "Do your plants get enough sunlight?",
             "What direction does your garden face for sunlight?",
-            "Are you growing plants that need full sunlight or partial shade?"
+            "Are you growing plants that need full sunlight or partial shade?",
+            "Is your plant getting enough light?",
+            "Some plants need direct sunlight, others prefer indirect light. What does your plant require?",
+            "Do you have a grow light for your indoor plants?",
+            "Are you considering moving your plant to a brighter location?"
+        ]],
+        ["* sun *", [
+            "Does your plant get full sun or partial shade?",
+            "Tomatoes, peppers, and basil love full sunlight. Are they in the right spot?",
+            "Do you move your indoor plants around to catch more sunlight?",
+            "Are you using any special lighting for your plants during the winter months?"
         ]]
     ]],
-    ["soil", 0, [
+    ["soil", 5, [
         ["* soil *", [
             "What type of soil are you using for your plants?",
-            "Have you considered adding compost to your soil?",
-            "Is your soil rich in nutrients for healthy plant growth?"
+            "Is your soil well-draining?",
+            "Do you amend your soil with compost or other organic material?",
+            "Soil pH is important for plant health. Have you checked yours recently?",
+            "Do you use a specific type of soil for different kinds of plants?"
+        ]],
+        ["* fertilizer *", [
+            "Do you use fertilizer for your houseplants or garden plants?",
+            "How often do you fertilize your plants?",
+            "Are you using organic or synthetic fertilizer?",
+            "Different plants require different types of fertilizer. Have you researched the best for yours?"
         ]]
     ]],
     ["plants", 5, [
@@ -120,13 +166,6 @@ var elizaKeywords = [
             "What kinds of succulents are you growing?"
         ]]
     ]],
-    ["tomatoes", 5, [
-        ["* tomatoes *", [
-            "Tomatoes need plenty of sunlight and regular watering. How are your tomatoes doing?",
-            "What variety of tomatoes are you growing?",
-            "Are you using stakes or cages for your tomato plants?"
-        ]]
-    ]],
     ["herbs", 5, [
         ["* herbs *", [
             "What herbs do you have in your garden?",
@@ -146,18 +185,6 @@ var elizaKeywords = [
             "Have you pruned your plants recently?",
             "When was the last time you pruned your plants for better growth?",
             "What type of pruning method do you prefer for your plants?"
-        ]]
-    ]],
-    ["watering", 0, [
-        ["* how often do you water *", [
-        "How often do you typically water your plants?",
-        "What’s your watering schedule like for your garden?",
-        "I recommend watering most plants every 1-2 weeks, depending on the type."
-        ]],
-        ["* do you water *", [
-        "Do you water them thoroughly or just a little at a time?",
-        "What’s your method for watering your plants?",
-        "Are you using any self-watering techniques?"
         ]]
     ]],
     ["houseplant", 10, [
@@ -187,94 +214,25 @@ var elizaKeywords = [
             "Are you keeping your cactus in a sunny spot?",
             "Do you have trouble with overwatering your cactus?",
             "Cacti like dry, well-drained soil. Does your cactus thrive in it?"
-        ]],
+        ]]
     ]],
-    ["outdoorplant", 10, [
-        ["* tomato *", [
-            "Tomatoes love sunlight. How much sun does your tomato plant get?",
-            "Are your tomatoes showing signs of fruit yet?",
-            "How do you manage watering your tomatoes during hot weather?",
-            "Tomatoes need well-drained soil. How is the drainage in your garden?"
+    ["growth", 5, [
+        ["* growth *", [
+            "How is the growth of your plants progressing?",
+            "Is your plant growing as expected?",
+            "Are you noticing any signs of slow growth?",
+            "What steps have you taken to promote healthy plant growth?"
         ]],
-        ["* basil *", [
-            "Basil needs warmth and sunlight. How does your basil plant look?",
-            "Are you harvesting leaves from your basil yet?",
-            "Basil is a great herb for cooking. Do you use it often?",
-            "How often do you prune your basil to encourage more growth?"
+        ["* bloom *", [
+            "Is your plant blooming yet?",
+            "What kind of flowers are you hoping to see on your plant?",
+            "Some plants need special care to bloom. Have you researched what your plant requires?"
         ]],
-        ["* pepper *", [
-            "Peppers love heat! Is your pepper plant thriving in warm conditions?",
-            "Are you seeing any flowers on your pepper plant?",
-            "How do you keep your pepper plants healthy throughout the growing season?",
-            "Do you know the best time to harvest your peppers?"
-        ]],
-        ["* rose *", [
-            "Roses need a lot of sun to bloom beautifully. Is yours getting enough light?",
-            "How often do you fertilize your rose bush?",
-            "Do you prune your rose plant regularly to encourage healthy growth?",
-            "What color roses are you growing in your garden?"
-        ]],
-        ["* lavender *", [
-            "Lavender loves full sunlight and well-drained soil. How are your plants doing?",
-            "Lavender is very fragrant. Do you use it for cooking or aromatherapy?",
-            "Are you growing lavender in a pot or directly in the ground?",
-            "How often do you water your lavender plant?"
-        ]],
-        ["* cucumber *", [
-            "Cucumbers need space to grow. Do your cucumber vines have room to spread out?",
-            "How are your cucumbers doing in terms of growth?",
-            "Do you know how often cucumbers need to be watered?",
-            "Cucumbers are very sensitive to temperature. Have you had any heat issues with your plants?"
-        ]],
-    ]],
-    ["soil", 5, [
-        ["* soil *", [
-            "What type of soil are you using for your plants?",
-            "Is your soil well-draining?",
-            "Do you amend your soil with compost or other organic material?",
-            "Soil pH is important for plant health. Have you checked yours recently?",
-            "Do you use a specific type of soil for different kinds of plants?"
-        ]],
-        ["* fertilizer *", [
-            "Do you use fertilizer for your houseplants or garden plants?",
-            "How often do you fertilize your plants?",
-            "Are you using organic or synthetic fertilizer?",
-            "Different plants require different types of fertilizer. Have you researched the best for yours?"
-        ]],
-    ]],
-    ["watering", 5, [
-        ["* water *", [
-            "How often do you water your plants?",
-            "Do you let the soil dry out completely before watering?",
-            "Overwatering can be a problem. How do you avoid it?",
-            "Do you water your plants in the morning or evening?",
-            "How do you monitor the moisture levels in your soil?"
-        ]],
-        ["* dry *", [
-            "Is the soil in your garden drying out too quickly?",
-            "If your soil dries out fast, have you thought about mulching?",
-            "How do you keep the moisture in the soil during hot weather?",
-            "Dry soil can stress plants. Do you have any strategies to retain moisture?"
-        ]],
-        ["* moist *", [
-            "Moist soil is ideal for many plants. Are you achieving that balance?",
-            "Do you check the moisture level before watering?",
-            "Plants like ferns and tropical houseplants need moist environments. How do you manage that?"
-        ]],
-    ]],
-    ["light", 5, [
-        ["* light *", [
-            "Is your plant getting enough light?",
-            "Some plants need direct sunlight, others prefer indirect light. What does your plant require?",
-            "Do you have a grow light for your indoor plants?",
-            "Are you considering moving your plant to a brighter location?"
-        ]],
-        ["* sun *", [
-            "Does your plant get full sun or partial shade?",
-            "Tomatoes, peppers, and basil love full sunlight. Are they in the right spot?",
-            "Do you move your indoor plants around to catch more sunlight?",
-            "Are you using any special lighting for your plants during the winter months?"
-        ]],
+        ["* pruning *", [
+            "Pruning helps with growth. Do you regularly prune your plants?",
+            "Are you familiar with the best time to prune your plant?",
+            "What parts of the plant do you prune to encourage more growth?"
+        ]]
     ]],
     ["pest", 5, [
         ["* pest *", [
@@ -299,143 +257,117 @@ var elizaKeywords = [
             "Mealybugs can be removed with a cotton swab dipped in rubbing alcohol or insecticidal soap."
         ]]
     ]],
-    ["growth", 5, [
-        ["* growth *", [
-            "How is the growth of your plants progressing?",
-            "Is your plant growing as expected?",
-            "Are you noticing any signs of slow growth?",
-            "What steps have you taken to promote healthy plant growth?"
-        ]],
-        ["* bloom *", [
-            "Is your plant blooming yet?",
-            "What kind of flowers are you hoping to see on your plant?",
-            "Some plants need special care to bloom. Have you researched what your plant requires?"
-        ]],
-        ["* pruning *", [
-            "Pruning helps with growth. Do you regularly prune your plants?",
-            "Are you familiar with the best time to prune your plant?",
-            "What parts of the plant do you prune to encourage more growth?"
-        ]],
-    ]],
     ["dyingplant", 10, [
         ["* dying *", [
             "It sounds like your plant might be struggling. What symptoms are you noticing?",
             "What type of plant is it? Some plants have specific care needs.",
             "Are the leaves turning yellow or brown? That could indicate a problem.",
-            "What kind of environment is your plant in? Light, temperature, and humidity all affect plant health.",
-            "Have you checked the roots to see if there are any signs of rot?"
+            "What kind of environment is your plant in? It may need changes in watering or sunlight."
         ]],
         ["* wilting *", [
-            "Wilting can be a sign of underwatering or overwatering. How often are you watering your plant?",
-            "Are the leaves limp and drooping? Sometimes this happens when plants aren't getting enough water.",
-            "Have you checked the soil to see if it's too dry or too soggy?"
-        ]],
-        ["* brown leaves *", [
-            "Brown leaves can be caused by a few things. Is the plant getting enough water?",
-            "If the edges of the leaves are turning brown, it might be a sign of overwatering or underwatering.",
-            "Are the brown spots on the leaves dry and crispy, or are they soft and mushy?",
-            "It could also be a sign of too much direct sunlight or nutrient deficiencies."
+            "Wilting can be a sign of too little or too much water. Have you checked your watering schedule?",
+            "What’s the soil like? Is it too dry or too soggy?"
         ]],
         ["* yellow leaves *", [
-            "Yellowing leaves can be a sign of overwatering or nutrient deficiencies. Have you been watering regularly?",
-            "Is the plant getting enough sunlight? Sometimes too little light causes leaves to yellow.",
-            "Check the roots. Yellow leaves might indicate root rot or a need for repotting."
+            "Yellow leaves might indicate overwatering or a nutrient deficiency. Have you checked your plant’s soil?"
         ]],
-        ["* no new growth *", [
-            "Lack of new growth could mean your plant isn't getting enough light or nutrients.",
-            "Is the plant in a location where it gets plenty of indirect sunlight?",
-            "Have you fertilized the plant recently? Sometimes a lack of nutrients can stunt growth."
-        ]],
-        ["* dropping leaves *", [
-            "If your plant is losing leaves, it might be stressed from changes in temperature or humidity.",
-            "Are you overwatering or underwatering? Either of those can cause leaf drop.",
-            "Have you moved the plant recently? Sometimes plants drop leaves after being relocated."
-        ]],
+        ["* brown tips *", [
+            "Brown tips on leaves are often caused by low humidity or over-fertilizing. Could one of these be the issue?"
+        ]]
     ]],
-    ["overwatering", 5, [
-        ["* overwater *", [
-            "Overwatering is a common problem for many plants. Have you noticed soggy soil or water sitting in the pot?",
-            "Is your plant in a pot with drainage holes? Without proper drainage, the water can't escape.",
-            "Do you let the soil dry out between waterings? Plants like succulents and cacti need less frequent watering."
+    ["watering", 5, [
+        ["* watering *", [
+            "Proper watering is essential for plant health. Most plants prefer deep, infrequent watering rather than frequent shallow watering. Are you allowing the soil to dry out between waterings?",
+            "It’s important to water your plants thoroughly so that the water reaches the roots. You can check if they need water by sticking your finger in the soil. If it feels dry an inch down, it’s time to water!"
         ]],
-        ["* root rot *", [
-            "Root rot is often caused by overwatering. Have you checked the roots for signs of mushiness or discoloration?",
-            "If your plant is showing signs of root rot, you may need to trim away the affected roots and repot it in fresh, well-draining soil."
+        ["* how often * water *", [
+            "The frequency of watering depends on the type of plant and the environment. In general, water when the top inch of soil feels dry. Some plants like cacti only need watering every couple of weeks, while others like ferns need moisture more often."
         ]],
-        ["* soggy soil *", [
-            "Soggy soil could indicate that you are overwatering or that the plant's pot isn't draining properly.",
-            "How often are you watering your plant? Sometimes letting the soil dry out completely between waterings helps prevent overwatering."
+        ["* overwatering *", [
+            "Overwatering can lead to root rot. Make sure your plant’s pot has drainage holes, and only water when the top inch of soil feels dry. Are you seeing yellowing leaves or mushy stems? These are signs of overwatering."
         ]],
-        ["* yellowing leaves *", [
-            "Yellowing leaves can be a sign of overwatering. Have you noticed any unusual symptoms like a musty smell or mold on the soil surface?",
-            "If your plant is getting too much water, it may not be able to absorb nutrients properly."
-        ]],
+        ["* dry soil *", [
+            "If the soil in your pot is drying out too quickly, it may be a sign that your plant needs more frequent watering or that the soil is too sandy. Try using a heavier, moisture-retaining mix if your plant needs more water."
+        ]]
     ]],
-    ["underwatering", 5, [
-        ["* underwater *", [
-            "Underwatering is another common issue. Are you letting the soil dry out too much between waterings?",
-            "When was the last time you watered your plant? Plants like ferns and tropicals prefer moist soil.",
-            "How does the soil feel? If it’s dry and crumbly, your plant might be underwatered."
+    ["sunlight", 5, [
+        ["* sunlight *", [
+            "Most plants need plenty of natural light to thrive, but the amount and intensity of light they require can vary. For example, succulents prefer bright, direct sunlight, while ferns thrive in low to medium indirect light. What kind of plant are you caring for?"
         ]],
-        ["* dry leaves *", [
-            "Dry, crispy leaves are often a sign of underwatering. Are you watering the plant regularly?",
-            "Sometimes the edges of the leaves turn brown and dry out when a plant doesn't get enough water."
+        ["* how much light *", [
+            "If you're unsure whether your plant is getting enough light, you can look for signs like leggy growth, small leaves, or leaning toward the light. These are signs your plant may need more light. Consider moving it to a brighter spot!"
+        ]],
+        ["* shade *", [
+            "Some plants, like ferns or peace lilies, prefer low to medium light and can do well in shaded spots. However, even shade-loving plants need a bit of indirect sunlight to stay healthy."
+        ]],
+        ["* bright light *", [
+            "If your plant needs bright light, it’s best to place it near a south-facing window, where it will get the most exposure to direct sunlight. Be mindful that too much direct sunlight can scorch delicate leaves, so a spot with bright, indirect light is often ideal."
+        ]]
+    ]],
+    ["soil", 5, [
+        ["* soil *", [
+            "Good soil is key to plant health. Most plants prefer well-draining soil with plenty of organic matter. Are you using a special mix for your plant, like cactus soil or a general-purpose potting mix?"
+        ]],
+        ["* compost *", [
+            "Composting is a great way to improve soil fertility. Mixing compost into your soil can add nutrients and improve its structure, making it better at retaining moisture while still draining well. Consider adding compost or other organic material to your potting mix!"
+        ]],
+        ["* fertilizing *", [
+            "Fertilizing is important for plant health, but it’s easy to overdo it. Use a balanced, water-soluble fertilizer for most plants, applying it once a month during the growing season. Always follow the instructions to avoid nutrient burn."
+        ]],
+        ["* soil pH *", [
+            "Soil pH can affect your plant's nutrient absorption. Some plants prefer acidic soil (like blueberries), while others like alkaline conditions (such as lilacs). You can test your soil’s pH with a simple testing kit and adjust it if necessary."
+        ]],
+        ["* soil drainage *", [
+            "Good drainage is crucial for healthy roots. Make sure your pot has drainage holes, and avoid using a heavy, clay-based soil for plants that require good airflow to their roots. For better drainage, mix in perlite or coarse sand."
+        ]]
+    ]],
+    ["temperature", 5, [
+        ["* temperature *", [
+            "Most plants prefer moderate temperatures between 60–75°F (15–24°C). Extreme heat or cold can cause stress. Is your plant near a drafty window or a heater? Temperature fluctuations can affect plant health."
+        ]],
+        ["* humidity *", [
+            "Many houseplants, like ferns and orchids, thrive in high humidity. You can increase humidity by placing a tray of water near your plants, grouping plants together, or using a humidifier."
+        ]],
+        ["* cold *", [
+            "Cold drafts can harm plants, especially tropical ones. Keep your plants away from windows during winter or from cold air vents. If your plant is exposed to too much cold, you might notice yellowing or wilting."
+        ]],
+        ["* heat *", [
+            "In hot weather, plants can dry out quickly. Make sure to water your plants more frequently during the summer, and avoid placing them in direct sunlight during the hottest part of the day, as the heat can scorch the leaves."
+        ]],
+        ["* air circulation *", [
+            "Good air circulation helps prevent fungal infections and encourages healthy plant growth. Avoid overcrowding plants and make sure air can flow around them, especially in humid environments."
+        ]]
+    ]],
+    ["pruning", 5, [
+        ["* pruning *", [
+            "Pruning helps promote healthy growth by removing dead or diseased stems and leaves. Be sure to use clean, sharp scissors or pruning shears to avoid damaging your plant. What part of your plant do you think needs pruning?"
+        ]],
+        ["* deadheading *", [
+            "Deadheading is the practice of removing spent flowers. This encourages new blooms and helps keep the plant looking tidy. Try cutting off the flowers just above the next set of leaves to promote further growth."
+        ]],
+        ["* repotting *", [
+            "If your plant’s roots are outgrowing their pot, it’s time to repot. Choose a pot that’s 1–2 inches larger in diameter than the current one and refresh the soil with a new potting mix to give your plant more room to grow."
+        ]],
+        ["* cutting back *", [
+            "Cutting back encourages bushier growth, especially for plants like fuchsias and geraniums. Trim back leggy stems in early spring to promote a fuller plant."
+        ]]
+    ]],
+    ["troubleshooting", 5, [
+        ["* yellow leaves *", [
+            "Yellow leaves can indicate overwatering, nutrient deficiencies, or poor lighting. Are you watering too frequently? Have you checked if your plant is getting enough light?"
         ]],
         ["* wilting *", [
-            "Wilting can also be caused by underwatering. How do the soil and roots feel? Is the soil very dry?",
-            "Make sure you're watering thoroughly, so the roots get enough moisture."
+            "Wilting can be caused by underwatering or overwatering. Check the soil to see if it’s too dry or too soggy. If the soil is dry, water your plant thoroughly. If it’s soggy, reduce watering and improve drainage."
         ]],
-        ["* crispy edges *", [
-            "Crispy leaf edges can indicate underwatering or too much dry air. Have you tried increasing humidity around your plant?",
-            "Is your plant in a dry or hot area of your home? If so, it might need more frequent watering or humidity."
+        ["* pests *", [
+            "Are you dealing with pests? Aphids, spider mites, and mealybugs are common offenders. You can gently wipe your plant’s leaves with soapy water or use neem oil to treat them."
         ]],
-    ]],
-    ["lightissues", 5, [
-        ["* too much sun *", [
-            "Some plants can get sunburned if they're in too much direct sunlight. Are your plant's leaves turning brown or crispy?",
-            "Do you notice your plant getting scorched or burned by the sun? It might need to be moved to a shadier spot."
-        ]],
-        ["* too little sun *", [
-            "If your plant isn't getting enough light, it might start to stretch or become leggy. How much light does it get each day?",
-            "Some plants, like succulents, need bright direct sunlight. Others, like ferns, prefer indirect light."
-        ]],
-        ["* leggy *", [
-            "A leggy appearance could mean your plant is stretching toward a light source. Is it in a place that gets enough sunlight?",
-            "If your plant is becoming leggy, it may need more light to stay compact and healthy."
-        ]],
-    ]],
-    ["rootbound", 5, [
-        ["* rootbound *", [
-            "Is your plant rootbound? You can tell if roots are growing out of the drainage holes or if they’re circling the bottom of the pot.",
-            "If your plant is rootbound, it might not be able to take up enough water or nutrients. Repotting it into a larger container might help."
-        ]],
-        ["* pot *", [
-            "Have you checked to see if your plant needs a bigger pot? Sometimes plants stop growing because their roots run out of space.",
-            "Repotting a rootbound plant can give it a fresh start and room to grow. What size pot are you using?"
-        ]],
-    ]],
-    ["dyingplant", 10, [
-        ["* plant is dying *", [
-            "I’m sorry to hear your plant is struggling. Could you describe the symptoms more specifically? Please choose one of the following options:",
-            "1. Yellowing leaves",
-            "2. Brown, crispy edges",
-            "3. Wilting or drooping",
-            "4. Leaves falling off",
-        ]],
-        ["1", [
-            "Yellowing leaves can mean overwatering or too little light. How often are you watering your plant? Is it getting enough sunlight?"
-        ]],
-        ["2", [
-            "Brown, crispy edges can be a sign of underwatering or too much direct sunlight. How does the soil feel?"
-        ]],
-        ["3", [
-            "Wilting can be caused by both overwatering and underwatering. Can you check if the soil is dry or soggy?"
-        ]],
-        ["4", [
-            "Leaf drop can happen for several reasons. Have you recently moved your plant or changed its environment?"
-        ]],
-    ]]
+        ["* disease *", [
+            "Fungal diseases can affect plants, especially in humid environments. Make sure your plant has good air circulation and avoid overhead watering, which can spread spores."
+        ]]
+    ]]                        
 ];
+
 
 // regexp/replacement pairs to be performed as final cleanings
 // here: cleanings for multiple bots talking to each other

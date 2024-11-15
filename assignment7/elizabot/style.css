@@ -50,6 +50,7 @@ tr, td{
     margin-bottom: 10px;
     width: 100%;
     font-size: medium;
+    resize: vertical;
 }
 
 .main-area:focus{
